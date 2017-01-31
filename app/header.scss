@@ -1,0 +1,26 @@
+/* First screen styles */
+
+// You can use Juice(http://kylebrumm.com/juice/) and bourbon(http://bourbon.io/)
+
+@import "bourbon";
+@import "scss/_mixin";
+
+@import "scss/_base";
+@import "scss/_vars";
+
+.header{
+  color: #ffffff;
+  background-color: #CF4646;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  &__block{
+    margin: auto;
+  }
+  &__h1{
+    margin: 0;
+    font-size: 10rem;
+    font-style: italic;
+    font-weight: normal;
+  }
+}

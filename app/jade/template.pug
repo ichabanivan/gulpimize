@@ -1,0 +1,44 @@
+include _mixin
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    block title
+    block description
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    // Template Basic Images Start
+    meta(property='og:image', content='path/to/image.jpg')
+    link(rel='shortcut icon', href='img/favicon/favicon.ico', type='image/x-icon')
+    link(rel='apple-touch-icon', href='img/favicon/apple-touch-icon.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='img/favicon/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='img/favicon/apple-touch-icon-114x114.png')
+    // Template Basic Images End
+    // Header CSS (first screen styles from header.min.css) - inserted in the build of the project
+    style
+      include ../header.min.css
+    block fonts
+      +fonts()
+    script.
+      loadCSS( "css/fonts.css?ver=1.0.0", false, "all" ); // Loading fonts, if the site is located in a subfolder
+      // loadLocalStorageCSS( "webfonts", "css/fonts.css?ver=1.0.0" ); // Loading fonts, if the site is at the root
+    // Load Fonts CSS End
+    // Load Custom CSS Start
+    script.
+      loadCSS( "css/style.css?ver=1.0.0", false, "all" );
+      loadCSS( "css/libs.css?ver=1.0.0", false, "all" );
+    // Load Custom CSS End
+    link(rel='stylesheet', href='css/style.css')
+    // Load Custom CSS Compiled without JS Start
+    noscript
+      link(rel='stylesheet', href='css/fonts.css')
+      link(rel='stylesheet', href='css/libs.css')
+      link(rel='stylesheet', href='css/style.css')
+    // Load Custom CSS Compiled without JS End
+    // Custom Browsers Color Start
+    block color
+    // Custom Browsers Color End
+  body
+    // Custom HTML
+    block content

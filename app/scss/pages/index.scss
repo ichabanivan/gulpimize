@@ -1,0 +1,20 @@
+// The main file for the stylesheet
+
+// You can use Juice(http://kylebrumm.com/juice/) and bourbon(http://bourbon.io/)
+
+@import "bourbon";
+@import "../_mixin";
+
+// Vars
+
+@import "../_vars";
+
+/* Sprites */
+
+@import "../sprite";
+@import "../svg-symbols";
+
+/* Styles */
+
+@import "../partials/template";
+@import "../components/template";

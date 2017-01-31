@@ -1,0 +1,56 @@
+// You can use Juice(http://kylebrumm.com/juice/) and bourbon(http://bourbon.io/)
+
+@import "bourbon";
+@import "_mixin";
+@import "_vars";
+
+@import "../libs/normalize";
+
+/* Base styles */
+
+* {
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: #666;
+    opacity: 1;
+  }
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html{
+  font-size: 16px;
+  @include bp(max, 1170px){
+    font-size: 15px;
+  }
+  @include bp(max,960px){
+    font-size: 14px;
+  }
+  @include bp(max,768px){
+    font-size: 13px;
+  }
+  @include bp(max,480px){
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: $default-font !important;
+  font-size: 16px;
+  line-height: 1.5;
+  min-width: 320px;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  input:focus:required:invalid,
+  textarea:focus:required:invalid,
+  input:required:valid,
+  textarea:required:valid {
+    color: #666;
+  }
+}
