@@ -1,27 +1,10 @@
 mixin color(color)
   // Chrome, Firefox OS and Opera
-  meta(name='theme-color', content='#{color}')
+  meta(name='theme-color', content=color)
   // Windows Phone
-  meta(name='msapplication-navbutton-color', content='#{color}')
+  meta(name='msapplication-navbutton-color', content=color)
   // iOS Safari
-  meta(name='apple-mobile-web-app-status-bar-style', content='#{color}')
-
-mixin fonts()
-  // Load CSS, CSS Localstorage & WebFonts Main Function
-  script.
-    !function(a){"use strict";function b(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&&a.attachEvent("on"+b,c)}function c(b,c){return a.localStorage&&localStorage[b+"_content"]&&localStorage[b+"_file"]===c}function d(b,d){if(a.localStorage&&a.XMLHttpRequest)c(b,d)?f(localStorage[b+"_content"]):e(b,d);else{var h=g.createElement("link");h.href=d,h.id=b,h.rel="stylesheet",h.type="text/css",g.getElementsByTagName("head")[0].appendChild(h),g.cookie=b}}function e(a,b){var c=new XMLHttpRequest;c.open("GET",b,!0),c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(f(c.responseText),localStorage[a+"_content"]=c.responseText,localStorage[a+"_file"]=b)},c.send()}function f(a){var b=g.createElement("style");b.setAttribute("type","text/css"),g.getElementsByTagName("head")[0].appendChild(b),b.styleSheet?b.styleSheet.cssText=a:b.innerHTML=a}var g=a.document;a.loadCSS=function(a,b,c){var d,e=g.createElement("link");if(b)d=b;else{var f;f=g.querySelectorAll?g.querySelectorAll("style,link[rel=stylesheet],script"):(g.body||g.getElementsByTagName("head")[0]).childNodes,d=f[f.length-1]}var h=g.styleSheets;e.rel="stylesheet",e.href=a,e.media="only x",d.parentNode.insertBefore(e,b?d:d.nextSibling);var i=function(a){for(var b=e.href,c=h.length;c--;)if(h[c].href===b)return a();setTimeout(function(){i(a)})};return e.onloadcssdefined=i,i(function(){e.media=c||"all"}),e},a.loadLocalStorageCSS=function(e,f){c(e,f)||g.cookie.indexOf(e)>-1?d(e,f):b(a,"load",function(){d(e,f)})}}(this);
-  // Load Fonts CSS Start
-
-mixin scripts()
-  // Optimized loading JS Start
-  script.
-    var scr = {
-      "scripts": [
-        {"src": "js/common.js", "async": false},
-        {"src": "js/main.js", "async": false}
-      ]
-    };!function(a,b,c){"use strict";var d=function(a){if("[object Array]"!==Object.prototype.toString.call(a))return!1;for(var c=0;c<a.length;c++){var d=b.createElement("script"),e=a[c];d.src=e.src,d.async=e.async,b.body.appendChild(d)}return!0};a.addEventListener?a.addEventListener("load",function(){d(c.scripts)},!1):a.attachEvent?a.attachEvent("onload",function(){d(c.scripts)}):a.onload=function(){d(c.scripts)}}(window,document,scr);
-  // Optimized loading JS End
+  meta(name='apple-mobile-web-app-status-bar-style', content=color)
 
 mixin icon(name)
   svg(class="icon icon-" + name)

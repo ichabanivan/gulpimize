@@ -1,10 +1,10 @@
 // We includes modules and libraries here.
 
-import $ from 'jquery/dist/jquery';
+// import $ from 'jquery/dist/jquery.min.js';
 
 import welcome from './modules/welcome';
 
-document.querySelector('html').onclick = function() {
+document.querySelector('.fa.fa-eercast').onclick = function() {
   require.ensure([], function() {
     require('./modules/dynamic');
   });

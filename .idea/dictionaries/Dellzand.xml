@@ -3,11 +3,13 @@
     <words>
       <w>automath</w>
       <w>browserify</w>
+      <w>cssfont</w>
       <w>csso</w>
       <w>devtool</w>
       <w>fallbacks</w>
       <w>filenames</w>
       <w>flexbug</w>
+      <w>gulpimize</w>
       <w>gulplog</w>
       <w>gutil</w>
       <w>htaccess</w>
@@ -15,8 +17,10 @@
       <w>minify</w>
       <w>mixins</w>
       <w>occurences</w>
+      <w>pablic</w>
       <w>pngquant</w>
       <w>postcss</w>
+      <w>raleway</w>
       <w>revisioning</w>
       <w>scss</w>
       <w>snockets</w>
@@ -31,6 +35,7 @@
       <w>uncss</w>
       <w>webfonts</w>
       <w>wiredep</w>
+      <w>woff</w>
     </words>
   </dictionary>
 </component>

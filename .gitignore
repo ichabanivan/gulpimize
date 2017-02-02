@@ -21,6 +21,7 @@ node_modules
 bower_components
 app/header.css
 app/header.min.css
+app/manifest/
 dist
 
 # File-based project format:

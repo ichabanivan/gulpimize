@@ -12,6 +12,14 @@
 /* Sprites */
 
 @import "../sprite";
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
 @import "../svg-symbols";
 
 /* Styles */
