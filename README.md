@@ -9,7 +9,7 @@ How to use:
 2. Install Node Modules: npm i;
 3. Run the template: gulp.
 
-### Before use, you need to fill <a href="https://github.com/zanusilker/gulpimize/blob/master/config.js">config.js</a>
+### Before use, you need to fill <a href="https://github.com/zanusilker/gulpimize/blob/master/config.js">config.js</a> :heavy_exclamation_mark:
 
 
 RU
@@ -21,4 +21,4 @@ RU
 2. Установите модули Node.js командой npm i;
 3. Запустите шаблон командой gulp. Готово, можно работать.
 
-### До начала использования вам необходимо заполнить <a href="https://github.com/zanusilker/gulpimize/blob/master/config.js">config.js</a>
+### До начала использования вам необходимо заполнить <a href="https://github.com/zanusilker/gulpimize/blob/master/config.js">config.js</a> :heavy_exclamation_mark:
