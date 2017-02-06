@@ -1,14 +1,17 @@
-// First screen styles
+// The main file for the stylesheet
 
 // You can use Juice(http://kylebrumm.com/juice/) and bourbon(http://bourbon.io/)
 
 @import "bourbon";
-@import "scss/_mixin";
+@import "../_mixin";
 
-@import "scss/_base";
-@import "scss/_vars";
+// You can use Juice(http://kylebrumm.com/juice/) and bourbon(http://bourbon.io/)
 
-/*! Critical CSS */
+// Vars
+
+@import "../_vars";
+
+/* Styles */
 
 .header{
   color: #ffffff;

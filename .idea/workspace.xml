@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/config.js" line="5" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4f33a58-031d-43eb-a053-e4f8b8f38666" name="Default" comment="changed README.md" />
+    <list default="true" id="b4f33a58-031d-43eb-a053-e4f8b8f38666" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scss/components/header.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/header.scss" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Dellzand.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Dellzand.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/jade/template.pug" afterPath="$PROJECT_DIR$/app/jade/template.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/libs/font-awesome.css" afterPath="$PROJECT_DIR$/app/libs/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scss/pages/index.scss" afterPath="$PROJECT_DIR$/app/scss/pages/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+    </list>
     <list id="965e7422-0977-4f48-9e3a-7d0042f2074b" name="Rejected commit: Default" comment="first commit" />
     <ignored path="gulpnew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,34 +52,72 @@
       <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="42">
+              <caret line="2" column="87" lean-forward="false" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="69">
-                <caret line="23" column="92" lean-forward="false" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3180">
+              <caret line="290" column="5" lean-forward="false" selection-start-line="290" selection-start-column="2" selection-end-line="290" selection-end-column="5" />
+              <folding>
+                <element signature="e#4501#5687#0" expanded="false" />
+                <element signature="e#5701#8010#0" expanded="false" />
+                <element signature="e#5726#7480#0" expanded="false" />
+                <element signature="e#8517#8675#0" expanded="false" />
+                <element signature="e#9067#10328#0" expanded="false" />
+                <element signature="e#10724#12047#0" expanded="false" />
+                <element signature="e#12079#13303#0" expanded="false" />
+                <element signature="e#12253#12388#0" expanded="false" />
+                <element signature="e#16649#17316#0" expanded="false" />
+                <element signature="e#17351#17834#0" expanded="false" />
+                <element signature="e#17869#19018#0" expanded="false" />
+                <element signature="e#19416#19846#0" expanded="false" />
+                <element signature="e#19881#20313#0" expanded="false" />
+                <element signature="e#20709#20861#0" expanded="false" />
+                <element signature="e#21252#21314#0" expanded="false" />
+                <element signature="e#21341#21514#0" expanded="false" />
+                <element signature="e#21543#21633#0" expanded="false" />
+                <element signature="e#21663#22035#0" expanded="false" />
+                <element signature="e#22067#22207#0" expanded="false" />
+                <element signature="e#22234#22534#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <file leaf-file-name="libs.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/css/libs.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7896">
-              <caret line="391" column="6" lean-forward="false" selection-start-line="391" selection-start-column="6" selection-end-line="391" selection-end-column="6" />
+            <state relative-caret-position="126">
+              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
               <folding>
-                <element signature="e#4303#5489#0" expanded="false" />
+                <marker date="1486302115082" expanded="true" signature="37677:37680" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="font-awesome.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/libs/font-awesome.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="css.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/manifest/css.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,12 +132,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/header.scss">
+      <file leaf-file-name="template.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/jade/template.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="420">
+              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="798">
+              <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,18 +157,8 @@
       <file leaf-file-name="index.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scss/pages/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/es6/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state relative-caret-position="588">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -125,14 +179,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rev</find>
-      <find>revReplace</find>
-      <find>sass</find>
-      <find>scss</find>
-      <find>shorthand</find>
-      <find>source</find>
-      <find>sourcemaps</find>
-      <find>spritesmith</find>
       <find>svgSprite</find>
       <find>svgmin</find>
       <find>uglify</find>
@@ -148,13 +194,21 @@
       <find>ащте</find>
       <find>true</find>
       <find>deploy</find>
-      <find>fun</find>
       <find>zanusilker/gulp</find>
       <find>css:f</find>
       <find>fonts.</find>
       <find>#</find>
       <find>1.1.0</find>
       <find>Gulpimize</find>
+      <find>3e3e3e</find>
+      <find>revReplace</find>
+      <find>gulpIf</find>
+      <find>gulp</find>
+      <find>var</find>
+      <find>pro</find>
+      <find>function</find>
+      <find>'</find>
+      <find>fun</find>
     </findStrings>
     <replaceStrings>
       <replace>1</replace>
@@ -167,7 +221,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="npm install gulp-svgstore" />
       <command text="npm i path" />
       <command text="npm i gulp-svg-symbols" />
       <command text="npm i gulp-cheerio" />
@@ -192,6 +245,7 @@
       <command text="npm install critical" />
       <command text="npm install webpack-closure-compiler" />
       <command text="ls" />
+      <command text="npm i gulp-util critical" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -201,13 +255,15 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/scss/style.scss" />
-        <option value="$PROJECT_DIR$/dist/js/1.js" />
-        <option value="$PROJECT_DIR$/dist/js/main.js" />
         <option value="$PROJECT_DIR$/app/es6/modules/dynamic.js" />
         <option value="$PROJECT_DIR$/app/es6/README.md" />
         <option value="$PROJECT_DIR$/app/jade/data/README.md" />
@@ -232,7 +288,6 @@
         <option value="$PROJECT_DIR$/path/font.css" />
         <option value="$PROJECT_DIR$/app/scss/font.css" />
         <option value="$PROJECT_DIR$/dist/css/fonts.woff2.css" />
-        <option value="$PROJECT_DIR$/app/libs/font-awesome.css" />
         <option value="$PROJECT_DIR$/app/scss/libs.scss" />
         <option value="$PROJECT_DIR$/dist/css/libs.css" />
         <option value="$PROJECT_DIR$/app/optimized/loadCSS.min.js" />
@@ -245,17 +300,21 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/scss/README.md" />
         <option value="$PROJECT_DIR$/app/scss/svg-symbols.scss" />
-        <option value="$PROJECT_DIR$/app/scss/pages/index.scss" />
-        <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/app/es6/main.js" />
         <option value="$PROJECT_DIR$/app/jade/_mixin.pug" />
         <option value="$PROJECT_DIR$/app/jade/pages/index.pug" />
-        <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/app/jade/template.pug" />
-        <option value="$PROJECT_DIR$/app/header.scss" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dist/1/index.css" />
+        <option value="$PROJECT_DIR$/dist/1/index.html" />
+        <option value="$PROJECT_DIR$/app/header.scss" />
+        <option value="$PROJECT_DIR$/app/scss/components/header.scss" />
+        <option value="$PROJECT_DIR$/app/scss/pages/index.scss" />
+        <option value="$PROJECT_DIR$/app/jade/template.pug" />
+        <option value="$PROJECT_DIR$/app/libs/font-awesome.css" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
       </list>
     </option>
   </component>
@@ -274,9 +333,71 @@
     <gulpfiles>
       <GulpfileState>
         <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>server</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>jade</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>css:main</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>css:libs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>webpack</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>img</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>img:sprites</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>svg:sprites</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>fonts-woff</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>fonts-woff2</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>htaccess</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>del</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>zip</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>cache</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>deploy</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>set-prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>env</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>default</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>production</task-name>
+          </GulpTaskState>
+        </tasks>
       </GulpfileState>
     </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpServers">
     <servers />
@@ -330,7 +451,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,6 +465,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,56 +504,56 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="false" name="jade" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+    <configuration default="false" name="css:libs" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>jade</task>
+        <task>css:libs</task>
       </tasks>
       <arguments />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="production" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+    <configuration default="false" name="modernizr" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>production</task>
+        <task>modernizr</task>
       </tasks>
       <arguments />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="svg:sprites" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+    <configuration default="false" name="insights" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>svg:sprites</task>
+        <task>insights</task>
       </tasks>
       <arguments />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+    <configuration default="false" name="photo" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>default</task>
+        <task>photo</task>
       </tasks>
       <arguments />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="img" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+    <configuration default="false" name="shoot" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>img</task>
+        <task>shoot</task>
       </tasks>
       <arguments />
       <envs />
@@ -495,19 +616,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Gulp.js.jade" />
-      <item index="1" class="java.lang.String" itemvalue="Gulp.js.production" />
-      <item index="2" class="java.lang.String" itemvalue="Gulp.js.svg:sprites" />
-      <item index="3" class="java.lang.String" itemvalue="Gulp.js.default" />
-      <item index="4" class="java.lang.String" itemvalue="Gulp.js.img" />
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.css:libs" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.modernizr" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.insights" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.photo" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.shoot" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gulp.js.production" />
-        <item index="1" class="java.lang.String" itemvalue="Gulp.js.img" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.default" />
-        <item index="3" class="java.lang.String" itemvalue="Gulp.js.jade" />
-        <item index="4" class="java.lang.String" itemvalue="Gulp.js.svg:sprites" />
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.insights" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.shoot" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.photo" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.modernizr" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.css:libs" />
       </list>
     </recent_temporary>
   </component>
@@ -558,6 +679,9 @@
       <workItem from="1486037870731" duration="143000" />
       <workItem from="1486038084244" duration="771000" />
       <workItem from="1486043508655" duration="179000" />
+      <workItem from="1486043996073" duration="597000" />
+      <workItem from="1486287646320" duration="12641000" />
+      <workItem from="1486360805143" duration="809000" />
     </task>
     <task id="LOCAL-00001" summary="build system">
       <created>1485850976809</created>
@@ -577,36 +701,36 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209528000" />
+    <option name="totallyTimeSpent" value="223575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818456" sideWeight="0.37037036" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818456" sideWeight="0.6296296" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56199676" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.95652175" sideWeight="0.50558656" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18154311" sideWeight="0.38277513" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42512077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18910742" sideWeight="0.5038168" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18910742" sideWeight="0.49618322" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56199676" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.57809985" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20726173" sideWeight="0.4380032" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16103059" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19515885" sideWeight="0.51913875" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31723028" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268921" sideWeight="0.4944134" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30917874" sideWeight="0.4944134" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.57809985" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6199678" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22383253" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -638,6 +762,35 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -655,55 +808,16 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="build system" />
     <MESSAGE value="changed README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed README.md" />
+    <MESSAGE value="Added critical css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added critical css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="41" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/optimized/loadFont.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="22" column="50" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/optimized/loadJS.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="433" lean-forward="false" selection-start-line="0" selection-start-column="433" selection-end-line="0" selection-end-column="433" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/optimized/loadJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/optimized/preloadCSS.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="577" lean-forward="false" selection-start-line="0" selection-start-column="577" selection-end-line="0" selection-end-column="577" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/optimized/preloadCSS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/1-c2dc657f15.js" />
-    <entry file="file://$PROJECT_DIR$/dist/js/common-c2dc657f15.js" />
-    <entry file="file://$PROJECT_DIR$/dist/js/main-c2dc657f15.js" />
-    <entry file="file://$PROJECT_DIR$/app/header.min.css" />
-    <entry file="file://$PROJECT_DIR$/dist/css/fonts.woff2.css" />
     <entry file="file://$PROJECT_DIR$/dist/css/fonts.woff.css" />
     <entry file="file://$PROJECT_DIR$/dist/js/main.js" />
     <entry file="file://$PROJECT_DIR$/app/es6/modules/dynamic.js">
@@ -782,7 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/manifest/css.json" />
     <entry file="file://$PROJECT_DIR$/app/manifest/fonts-css.json" />
     <entry file="file://$PROJECT_DIR$/app/manifest/libs-css.json" />
     <entry file="file://$PROJECT_DIR$/app/manifest/webpack.json" />
@@ -848,18 +961,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/gulp/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/babel-core/package.json" />
-    <entry file="file://$PROJECT_DIR$/app/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.htaccess" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,6 +983,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/es6/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/style-54210a5ff5.css" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="217">
+            <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/style.css" />
+    <entry file="file://$PROJECT_DIR$/dist/1/index.css" />
+    <entry file="file://$PROJECT_DIR$/dist/1/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2588">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/header.scss" />
+    <entry file="file://$PROJECT_DIR$/app/scss/components/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scss/components/header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scss/pages/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/jade/pages/index.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -887,70 +1055,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/jade/template.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="420">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/manifest/css.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/libs-0a0a4ba181.css" />
+    <entry file="file://$PROJECT_DIR$/app/libs/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/libs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding>
+            <marker date="1486302115082" expanded="true" signature="37677:37680" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/modernizr.js" />
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="87" lean-forward="false" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7896">
-          <caret line="391" column="6" lean-forward="false" selection-start-line="391" selection-start-column="6" selection-end-line="391" selection-end-column="6" />
+        <state relative-caret-position="-3180">
+          <caret line="290" column="5" lean-forward="false" selection-start-line="290" selection-start-column="2" selection-end-line="290" selection-end-column="5" />
           <folding>
-            <element signature="e#4303#5489#0" expanded="false" />
+            <element signature="e#4501#5687#0" expanded="false" />
+            <element signature="e#5701#8010#0" expanded="false" />
+            <element signature="e#5726#7480#0" expanded="false" />
+            <element signature="e#8517#8675#0" expanded="false" />
+            <element signature="e#9067#10328#0" expanded="false" />
+            <element signature="e#10724#12047#0" expanded="false" />
+            <element signature="e#12079#13303#0" expanded="false" />
+            <element signature="e#12253#12388#0" expanded="false" />
+            <element signature="e#16649#17316#0" expanded="false" />
+            <element signature="e#17351#17834#0" expanded="false" />
+            <element signature="e#17869#19018#0" expanded="false" />
+            <element signature="e#19416#19846#0" expanded="false" />
+            <element signature="e#19881#20313#0" expanded="false" />
+            <element signature="e#20709#20861#0" expanded="false" />
+            <element signature="e#21252#21314#0" expanded="false" />
+            <element signature="e#21341#21514#0" expanded="false" />
+            <element signature="e#21543#21633#0" expanded="false" />
+            <element signature="e#21663#22035#0" expanded="false" />
+            <element signature="e#22067#22207#0" expanded="false" />
+            <element signature="e#22234#22534#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scss/pages/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/es6/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="69">
-            <caret line="23" column="92" lean-forward="false" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

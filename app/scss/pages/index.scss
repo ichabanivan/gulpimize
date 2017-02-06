@@ -4,6 +4,9 @@
 
 @import "bourbon";
 @import "../_mixin";
+// First screen styles
+
+// You can use Juice(http://kylebrumm.com/juice/) and bourbon(http://bourbon.io/)
 
 // Vars
 
@@ -24,5 +27,4 @@
 
 /* Styles */
 
-@import "../partials/template";
-@import "../components/template";
+@import "../components/header";

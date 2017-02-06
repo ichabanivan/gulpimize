@@ -7,6 +7,7 @@ const gulp          = require("gulp"),                     // The streaming buil
       cleanCSS      = require("gulp-clean-css"),           // Minify css with clean-css.
       combine       = require("stream-combiner2").obj,     // This is a sequel to [stream-combiner](https://npmjs.org/package/stream-combiner) for streams3.
       concat        = require("gulp-concat"),              // Concatenates files
+      critical      = require("critical").stream,          // Extract & Inline Critical-path CSS from HTML
       cssfont64     = require("gulp-cssfont64"),           // Encode base64 data from font-files and store the result in a css file.
       csso          = require("gulp-csso"),                // Minify CSS with CSSO.
       del           = require("del"),                      // Delete files and folders
@@ -36,6 +37,7 @@ const gulp          = require("gulp"),                     // The streaming buil
       svgSprite     = require("gulp-svg-sprite"),          // Convert SVG files to symbols with gulp
       svgmin        = require("gulp-svgmin"),              // Minify SVG files with gulp.
       uglify        = require("gulp-uglify"),              // Minify files with UglifyJS
+      uncss         = require("gulp-uncss"),               // Remove unused CSS selectors.
       webpackStream = require("webpack-stream"),           // Run webpack through a stream interface
       webpack       = webpackStream.webpack,               // Webpack
       zip           = require("gulp-zip");                 // ZIP compress files
@@ -126,6 +128,9 @@ let path = {
   dist: {
     folder:   "./dist/",
     allFiles: "./dist/**/*",
+    html:{
+      allFiles: "./dist/*.html"
+    },
     css: {
       folder: "./dist/css/",
       allFiles: "./dist/css/**/*"
@@ -188,12 +193,19 @@ gulp.task("jade", () => {
       }))
     .pipe(pug({
       locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, "utf-8")), // This plugin parse JSON with data for jade(pug)
-      pretty: project.minifyHTML ? "" : "  "
+      pretty: project.minifyHTML ? "" : "  " // "" - compress html
     }))
     // If it's production then includes all the file with their new names from manifest file
     .pipe(production(revReplace({
       manifest: gulp.src(path.app.manifest.allFiles, {allowEmpty: true})
     })))
+    .pipe(critical({
+      base: "dist/",
+      inline: true,
+      css: isDevelopment ? "dist/css/style.css" : JSON.parse(fs.readFileSync("./app/manifest/css.json", "utf8"))["style.css"], // We read file name
+      minify: true,
+      extract: true
+    }))
     .pipe(gulp.dest(path.dist.folder)) // Gulp unloads files in "./dist/"
     .pipe(browserSync.reload({stream: true})); // Browser will reload
 
@@ -231,35 +243,6 @@ gulp.task("css:main", () => {
     .pipe(gulp.dest(path.dist.css.folder)) // Gulp unloads files in "./dist/css/"
     .pipe(production(combine(rev.manifest("css.json"), gulp.dest(path.app.manifest.folder)))) // If it's production this plugin will write manifest in css.json and unload it to "./app/manifest/"
     .pipe(browserSync.reload({stream: true})); // Browser will reload
-});
-
-gulp.task("css:header", () => {
-
-  return gulp.src(path.app.scss.files.header) // Gulp get the file from "./header.scss"
-    // Prevent pipe breaking caused by errors from gulp plugins
-    .pipe(plumber({
-      errorHandler: notify.onError((err) => {
-        return {
-          title: "css:header",
-          message: err.message
-        }
-      })
-    }))
-    .pipe(development(sourcemaps.init())) // If it's development this plugin will start to write sourcemaps
-    .pipe(sass({
-      outputStyle: "expanded",
-      includePaths: path.app.scss.includePaths
-    }))
-    .pipe(postcss(processors, {
-      syntax: scss
-    }))
-    .pipe(shorthand()) // Makes your CSS files lighter and more readable
-    .pipe(replace(/^\s*\n/mg, "\n"))
-    .pipe(rename({suffix: ".min"}))
-    .pipe(csso()) // Minify css
-    .pipe(development(sourcemaps.write())) // If it's development this plugin will finish to write sourcemaps
-    .pipe(gulp.dest(path.app.folder)) // Gulp unloads files in "./app/"
-    .pipe(browserSync.reload({stream: true})); // Browser will reload
 
 });
 
@@ -277,12 +260,14 @@ gulp.task("css:libs", () => {
   }))
   .pipe(development(sourcemaps.init())) // If it's development this plugin will start to write sourcemaps
   .pipe(sass({
-    outputStyle: "expanded",
-    includePaths: path.app.scss.includePaths
+    outputStyle: "expanded"
   }))
   .pipe(postcss(processors, {
     syntax: scss
   }))
+  .pipe(gulpIf(project.uncss, uncss({
+    html: [path.dist.html.allFiles]
+  })))
   .pipe(rename("libs.css"))
   .pipe(production(combine(cleanCSS({compatibility: "ie8"}), rev()))) // If it's production this plugin will minify css and write manifest
   .pipe(development(sourcemaps.write())) // If it's development this plugin will finish to write sourcemaps
@@ -298,7 +283,7 @@ gulp.task("css:libs", () => {
 
 // Gulp + Webpack = ♡
 
-gulp.task("webpack", function (callback) {
+gulp.task("webpack", (callback) => {
 
   const NODE_ENV = isDevelopment ? "development" : "production"; // Set environments
   let firstBuildReady = false;
@@ -466,7 +451,7 @@ gulp.task("svg:sprites", () => {
   }))
   // Remove all fill, style and stroke declarations in out shapes
   .pipe(cheerio({
-    run: function ($) {
+    run: ($) => {
       $("[fill]").removeAttr("fill");
       $("[stroke]").removeAttr("stroke");
       $("[style]").removeAttr("style");
@@ -552,7 +537,6 @@ gulp.task("del", () => {
 
 gulp.task("zip", () => {
 
-
   return gulp.src(path.dist.allFiles)
     .pipe(zip(`${project.name}.zip`)) // Directory "dist" archived and renamed in "project.zip"
     .pipe(gulp.dest(path.folder))
@@ -619,16 +603,13 @@ gulp.task(
   gulp.series(
     "env", "del",
     gulp.parallel(
-      "img:sprites", "svg:sprites", "htaccess", "fonts-woff", "fonts-woff2", "css:libs", "css:main", "css:header", "img", "webpack"
+      "img:sprites", "svg:sprites", "htaccess", "fonts-woff", "fonts-woff2", "css:libs", "css:main", "img", "webpack"
     ),
     gulp.series("jade"),
     gulp.parallel("server",
       () => {
         gulp.watch(path.app.jade.allFiles, gulp.series("jade"));
         gulp.watch(path.app.scss.allFiles, gulp.series("css:main"));
-        gulp.watch(path.app.scss.mixins, gulp.series("css:main", "css:header", "jade"));
-        gulp.watch([path.app.scss.files.header, path.app.scss.files.base], gulp.series("css:header", "jade"));
-        gulp.watch(path.app.scss.files.header, gulp.series("css:header", "jade"));
         gulp.watch(path.app.scss.files.libs, gulp.series("css:libs"));
         gulp.watch(path.app.img.allFiles, gulp.series("img"));
         gulp.watch(path.app.sprite.allFiles, gulp.series("img:sprites", "svg:sprites"));
