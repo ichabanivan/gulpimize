@@ -1,6 +1,5 @@
 const gulp          = require("gulp"),                     // The streaming build system
       AssetsPlugin  = require("assets-webpack-plugin"),    // Emits a json file with assets paths
-      bourbon       = require("node-bourbon"),             // Node-sass wrapper for thoughtbot's bourbon library
       browserSync   = require("browser-sync"),             // Live CSS Reload & Browser Syncing
       cache         = require("gulp-cache"),               // A cache proxy plugin for gulp
       cheerio       = require("gulp-cheerio"),             // Manipulate HTML and XML files with Cheerio in Gulp.
@@ -82,7 +81,6 @@ let path = {
     scss: {
       folder:   "./app/scss/",
       allFiles: "./app/scss/**/*.{css,scss}",
-      includePaths: ["./node_modules/susy/sass" , bourbon.includePaths],
       main:   "./app/scss/*.{css,scss}",
       mixins: "./app/scss/mixins/*.scss",
       components: "./app/scss/components/*.scss",
@@ -230,7 +228,7 @@ gulp.task("css:main", () => {
     .pipe(development(sourcemaps.init())) // If it's development this plugin will start to write sourcemaps
     .pipe(sass({
       outputStyle: "expanded",
-      includePaths: path.app.scss.includePaths
+      includePaths: require('node-juice-sass').includePaths
     }))
     .pipe(postcss(processors, {
       syntax: scss

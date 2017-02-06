@@ -15,16 +15,20 @@ html
     link(rel='apple-touch-icon', sizes='72x72', href='img/favicon/apple-touch-icon-72x72.png')
     link(rel='apple-touch-icon', sizes='114x114', href='img/favicon/apple-touch-icon-114x114.png')
     // Template Basic Images End
+    // Better webfont loading with using localStorage and providing WOFF2 support Start
     // This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
     script
       include ../optimized/loadFont.min.js
     block loadFont
+    // Better webfont loading with using localStorage and providing WOFF2 support End
     // Load Custom CSS Start
     block loadCSS
     // Load Custom CSS End
+    // A function for loading CSS asynchronously and polyfill support browsers that don't yet support this new feature Start
     script
       include ../optimized/loadCSS.min.js
       include ../optimized/preloadCSS.min.js
+    // A function for loading CSS asynchronously and polyfill support browsers that don't yet support this new feature End
     // Load Custom CSS Compiled without JS Start
     noscript
       link(rel='stylesheet', href='css/libs.css')
