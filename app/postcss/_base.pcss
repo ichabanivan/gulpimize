@@ -1,8 +1,10 @@
-@import "../libs/normalize";
+@import "normalize.css";
 
-/* Base styles */
+/*! Base styles */
 
 * {
+  box-sizing: border-box;
+
   &::-webkit-input-placeholder,
   &:-moz-placeholder,
   &::-moz-placeholder,
@@ -10,37 +12,46 @@
     color: #666;
     opacity: 1;
   }
-  box-sizing: border-box;
-  &:before,
-  &:after {
+
+  &::before,
+  &::after {
     box-sizing: border-box;
   }
 }
 
-html{
+html {
   font-size: 16px;
-  @include bp(max, 1170px){
+
+  @media screen and (width <= 1200px) {
     font-size: 15px;
   }
-  @include bp(max,960px){
+
+  @media screen and (width <= 992px) {
     font-size: 14px;
   }
-  @include bp(max,768px){
+
+  @media screen and (width <= 768px) {
     font-size: 13px;
   }
-  @include bp(max,480px){
+
+  @media screen and (width <= 480px) {
     font-size: 12px;
+  }
+
+  @media screen and (width <= 320px) {
+    font-size: 11px;
   }
 }
 
 body {
-  font-family: $default-font !important;
+  font-family: var(--default-font) !important;
   font-size: 16px;
   line-height: 1.5;
   min-width: 320px;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+
   input:focus:required:invalid,
   textarea:focus:required:invalid,
   input:required:valid,

@@ -1,3 +1,5 @@
-export default function(message){
-  console.log(message)
-};
+import $ from 'jquery/dist/jquery';
+
+export default function (message) {
+  alert(message);
+}

@@ -17,6 +17,7 @@
 .git
 .hg
 .svn
+lintCache.json
 node_modules
 bower_components
 app/header.css

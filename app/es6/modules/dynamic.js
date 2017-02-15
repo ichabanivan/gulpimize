@@ -1,1 +1,5 @@
-alert("Hi, I am from dynamic.js");
+import $ from 'jquery/dist/jquery';
+
+const dynamicFile = 'dynamic.js';
+alert(`Hi, I am from ${dynamicFile}`);
+

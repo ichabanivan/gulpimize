@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    // Additional, per-project rules...
+    "linebreak-style": 0
+  },
+  "globals": {
+    "window": true,
+    "document": true
+  }
+}

@@ -1,43 +1,44 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Dellzand">
     <words>
-      <w>automath</w>
-      <w>browserify</w>
       <w>cssfont</w>
+      <w>cssnext</w>
       <w>csso</w>
       <w>devtool</w>
-      <w>fallbacks</w>
+      <w>eslint</w>
       <w>filenames</w>
-      <w>flexbug</w>
-      <w>gulpimize</w>
+      <w>flexbugs</w>
       <w>gulplog</w>
       <w>gutil</w>
       <w>htaccess</w>
+      <w>htmlmin</w>
+      <w>htmlmininline</w>
       <w>imagemin</w>
+      <w>linter</w>
+      <w>minifier</w>
       <w>minify</w>
-      <w>mixins</w>
-      <w>modernizr</w>
+      <w>mqpacker</w>
       <w>occurences</w>
-      <w>pablic</w>
-      <w>pageres</w>
+      <w>pcss</w>
+      <w>pluggable</w>
       <w>pngquant</w>
       <w>postcss</w>
-      <w>raleway</w>
+      <w>precss</w>
+      <w>pxtorem</w>
       <w>revisioning</w>
       <w>scss</w>
-      <w>snockets</w>
       <w>sourcemaps</w>
       <w>spritesheet</w>
       <w>spritesmith</w>
-      <w>subfolder</w>
+      <w>stylelint</w>
+      <w>stylelintrc</w>
       <w>svgmin</w>
-      <w>svgo</w>
-      <w>thoughtbot</w>
       <w>uglify</w>
       <w>uncss</w>
-      <w>webfonts</w>
-      <w>wiredep</w>
+      <w>webfont</w>
       <w>woff</w>
+      <w>сomments</w>
+      <w>сompile</w>
     </words>
   </dictionary>
 </component>
