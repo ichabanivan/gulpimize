@@ -8,7 +8,7 @@ const
 
   PATH = require('../path');
 
-gulp.task('deploy', function () {
+gulp.task('gh-pages', function () {
   return gulp.src(PATH.build.allFiles)
     .pipe(ghPages());
 });
