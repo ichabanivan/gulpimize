@@ -14,15 +14,17 @@ $ npm run gulp
 
 Starting a fresh project
 If you plan on using this to start a new project, be sure and clear out the git data start a fresh history:
+
 ```
 rm -rf .git && git init
 git add .
 git commit -m "Initialized with Gulpimize"
 ```
+
 ## Technologies
 
 * Gulp - Automate and enhance your workflow
-* Webpack webpack is a module bundler.
+* Webpack - is a module bundler.
 * Pug - Terse language for writing HTML templates.
 * PostCSS - CSS with superpowers.
 * Babel - Use next generation JavaScript, today (ES5 => ES6).
