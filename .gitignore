@@ -4,12 +4,15 @@
 *.err
 *.exe
 *.log
+*.log*
 *.orig
 *.rej
 *.sass-cache
 *.swo
 *.swp
 *.vi
+*.iws
+*.ini
 *~
 
 # Folders to ignore
@@ -17,26 +20,12 @@
 .git
 .hg
 .svn
-lintCache.json
 node_modules
 bower_components
-app/header.css
-app/header.min.css
-app/manifest/
-dist
-
-# File-based project format:
-*.iws
-
-# Sass template
-.sass-cache/
-*.css.map
-
-# Node template
-# Logs
-logs
-*.log
-npm-debug.log*
+.idea
+src/manifest
+build
+gulpfile.js/temp
 
 # Optional npm cache directory
 .npm

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "RalewayRegular";
+  /* stylelint-disable */
+  src: url('../fonts/RalewayRegular.woff2') format('woff2'),
+       url('../fonts/RalewayRegular.woff') format('woff');
+  /* stylelint-enable */
+  font-weight: normal;
+  font-style: normal;
+}
