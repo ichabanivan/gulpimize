@@ -5,7 +5,7 @@
 </p>
 
 ## Use
----
+
 ```bash
 $ git clone https://github.com/zanusilker/gulpimize
 $ cd gulpimize/ && yarn install
@@ -20,7 +20,7 @@ git add .
 git commit -m "Initialized with Gulpimize"
 ```
 ## Technologies
----
+
 * Gulp - Automate and enhance your workflow
 * Webpack webpack is a module bundler.
 * Pug - Terse language for writing HTML templates.
