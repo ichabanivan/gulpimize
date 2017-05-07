@@ -8,7 +8,7 @@ const
 
 gulp.task('cache', () => {
   return new Promise((resolve, reject) => {
-    cache.clearAll()
+    cache.clearAll();
     resolve()
   })
-})
+});

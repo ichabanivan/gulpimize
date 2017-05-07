@@ -13,4 +13,4 @@ gulp.task('assets', () => {
   return gulp.src(PATH.src.files)
     .pipe(gulpIf('*.htaccess', gulp.dest(PATH.build.folder), gulp.dest(PATH.build.fonts.folder)))
     .pipe(browserSync.reload({stream: true}))
-})
+});

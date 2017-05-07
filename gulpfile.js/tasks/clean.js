@@ -12,4 +12,4 @@ gulp.task('clean', () => {
   return del(PATH.build.folder, {
     force: true
   })
-})
+});

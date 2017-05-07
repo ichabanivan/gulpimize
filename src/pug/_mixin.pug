@@ -9,3 +9,17 @@ mixin color(color)
 mixin icon(name)
   svg(class=name)
     use(xlink:href="img/symbols.svg#" + name)
+    
+mixin style(files)
+  // IE9+ CSS Loads without Blocking Render
+  for val in files
+    link(rel='preload', href='css/' + val + '.css', as='style', onload="this.rel='stylesheet'")
+  noscript
+    for val in files
+      link(rel='stylesheet', href='css/' + val + '.css')
+  script
+    include ../optimized/loadCSS.min.js
+    include ../optimized/preloadCSS.min.js
+  // Here to ensure a non-blocking load still occurs in IE and Edge, even if scripts follow loadCSS in head
+  script.
+    

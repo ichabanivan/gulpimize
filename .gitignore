@@ -16,6 +16,7 @@
 *~
 
 # Folders to ignore
+.publish
 .CVS
 .git
 .hg

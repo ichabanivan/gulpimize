@@ -9,7 +9,7 @@ module.exports = {
       allFiles: dirname + 'src/manifest/*.json'
     },
     img: {
-      allFiles: dirname + 'src/img/**/*.{png,jpg,gif}',
+      allFiles: dirname + 'src/img/**/*',
       svg: dirname + 'src/sprite/**/*svg'
     },
     pug: {
@@ -28,6 +28,10 @@ module.exports = {
     },
     js: {
       allFiles: dirname + 'src/js/*.*'
+    },
+    fonts: {
+      woff: dirname + 'src/fonts/**/*.woff',
+      woff2: dirname + 'src/fonts/**/*.woff2'
     }
   },
   build: {

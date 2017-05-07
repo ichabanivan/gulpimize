@@ -28,4 +28,4 @@ gulp.task('stylelint', () => {
     .pipe(postcss([stylelint(stylelintrc)], {
       syntax: scss
     }))
-})
+});

@@ -13,10 +13,10 @@ const
   PATH     = require('../path');
 
 gulp.task('eslint', function () {
-  let eslintResults = {}
+  let eslintResults = {};
 
   // Use '/' instead '\\' on Unix system
-  let cacheFilePath = process.cwd() + '\\temp\\lint-cache.json'
+  let cacheFilePath = process.cwd() + '\\temp\\lint-cache.json';
 
   try {
     eslintResults = JSON.parse(fs.readFileSync(cacheFilePath))
@@ -28,12 +28,12 @@ gulp.task('eslint', function () {
         return eslintResults[file.path] && eslintResults[file.path].mtime === file.stat.mtime.toJSON()
       },
       through2(function (file, enc, callback) {
-        file.eslint = eslintResults[file.path].eslint
+        file.eslint = eslintResults[file.path].eslint;
         callback(null, file)
       }),
       combine(
         through2(function (file, enc, callback) {
-          file.contents = fs.readFileSync(file.path)
+          file.contents = fs.readFileSync(file.path);
           callback(null, file)
         }),
         eslint(),
@@ -41,7 +41,7 @@ gulp.task('eslint', function () {
           eslintResults[file.path] = {
             eslint: file.eslint,
             mtime: file.stat.mtime
-          }
+          };
           callback(null, file)
         })
       )
@@ -50,4 +50,4 @@ gulp.task('eslint', function () {
     .on('end', function () {
       fs.writeFile(cacheFilePath, JSON.stringify((eslintResults)))
     })
-})
+});
