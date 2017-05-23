@@ -24,8 +24,6 @@ git commit -m "Initialized with Gulpimize"
 ## Technologies
 
 * Gulp - Automate and enhance your workflow
-* Webpack - is a module bundler.
 * Pug - Terse language for writing HTML templates.
 * PostCSS - CSS with superpowers.
 * Babel - Use next generation JavaScript, today (ES5 => ES6).
-* NodeJS - JavaScript runtime built on Chrome's V8 JavaScript engine.
