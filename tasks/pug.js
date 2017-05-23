@@ -34,7 +34,7 @@ gulp.task('pug', () => {
       locals: fs.readJson(YOUR_LOCALS, 'utf-8'),
       pretty: '  '
     }))
-    // If it's production then includes all the file with their new names from manifest file and create critical.css
+    // If it's production then includes all the file with their new names from manifest file
     .pipe(production(revReplace({
       manifest: gulp.src(PATH.src.manifest.allFiles, {allowEmpty: true})
     })))

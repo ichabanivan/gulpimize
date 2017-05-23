@@ -1,4 +1,4 @@
-// Deleting folder 'dist'
+// Deleting folder 'build'
 
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 

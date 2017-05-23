@@ -30,6 +30,7 @@ module.exports = {
       allFiles: dirname + 'src/js/*.*'
     },
     fonts: {
+      allFiles: dirname + 'src/fonts/**/*',
       woff: dirname + 'src/fonts/**/*.woff',
       woff2: dirname + 'src/fonts/**/*.woff2'
     }

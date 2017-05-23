@@ -1,4 +1,4 @@
-// Creating svg sprite
+ // Creating svg sprite
 
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 

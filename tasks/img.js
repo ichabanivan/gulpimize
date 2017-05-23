@@ -8,7 +8,7 @@ const
   imagemin    = require('gulp-imagemin'), // Minify PNG, JPEG, GIF and SVG images
   newer       = require('gulp-newer'),    // Only pass through newer source files
   cache       = require('gulp-cache'),    // A cache proxy plugin for gulp
-  plumber     = require('gulp-plumber'),  // Prevent pipe breaking caused by errors from gulp plugins              // A cache proxy plugin for gulp
+  plumber     = require('gulp-plumber'),  // Prevent pipe breaking caused by errors from gulp plugins
   notify      = require('gulp-notify'),   // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
 
   PATH = require('../path');
