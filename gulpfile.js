@@ -38,7 +38,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-      'symbols', 'assets', 'css:libs', 'postcss', 'img', 'es6', 'fonts'
+      'symbols', 'assets', 'css:libs', 'postcss', 'img', 'es6'
     ),
     gulp.series('pug')
   )

@@ -9,7 +9,7 @@ const
   scss         = require('postcss-scss'),         // SCSS parser for PostCSS.
   shorthand    = require('gulp-shorthand'),       // Makes your CSS files lighter and more readable
   combine      = require('stream-combiner2').obj, // This is a sequel to [stream-combiner](https://npmjs.org/package/stream-combiner) for streams3.
-  plumber      = require('gulp-plumber'),         // Prevent pipe breaking caused by errors from gulp plugins              // A cache proxy plugin for gulp
+  plumber      = require('gulp-plumber'),         // Prevent pipe breaking caused by errors from gulp plugins
   notify       = require('gulp-notify'),          // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
   environments = require('gulp-environments'),    // A library for easily adding environments (development/production) to Gulp
   sourcemaps   = require('gulp-sourcemaps'),      // Source map support for Gulp.js
@@ -25,6 +25,7 @@ let
   production  = environments.production;
 
 let
+  precss          = require('precss'),
   postcssImport   = require('postcss-import'),
   partialImport   = require('postcss-partial-import'),
   pxtorem         = require('postcss-pxtorem')({
@@ -52,7 +53,7 @@ let
   flexbugs        = require('postcss-flexbugs-fixes');
 
 const processors = [
-  postcssImport, partialImport, cssnext, pxtorem, assets, short, mqpacker, sorting, flexbugs, discardComments
+  precss, postcssImport, partialImport, cssnext, pxtorem, assets, short, mqpacker, sorting, flexbugs, discardComments
 ];
 
 gulp.task('postcss', () => {
