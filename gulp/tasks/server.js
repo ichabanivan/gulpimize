@@ -9,7 +9,7 @@ const
   PATH = require('../path');
 
 gulp.task('server', () => {
-  browserSync({
+  browserSync.init({
     server: {
       baseDir: PATH.build.folder // Run server from this folder
     },

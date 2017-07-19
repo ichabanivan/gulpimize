@@ -8,7 +8,7 @@ const
   plumber      = require('gulp-plumber'),      // Prevent pipe breaking caused by errors from gulp plugins
   notify       = require('gulp-notify'),       // Notification plugin for gulp
   pug          = require('gulp-pug'),          // Gulp plugin for compiling Pug templates
-  fs           = require('fs-extra'),                // File System
+  fs           = require('fs'),                // File System
   revReplace   = require('gulp-rev-replace'),  // Rewrite occurences of filenames which have been renamed by gulp-rev
   environments = require('gulp-environments'), // A library for easily adding environments (development/production) to Gulp
 
@@ -31,7 +31,9 @@ gulp.task('pug', () => {
     }))
     .pipe(pug({
       // It's parse JSON with data for pug(pug)
-      locals: fs.readJson(YOUR_LOCALS, 'utf-8'),
+      locals: {
+        data: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')) // You can add another file here
+      },
       pretty: '  '
     }))
     // If it's production then includes all the file with their new names from manifest file

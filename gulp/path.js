@@ -13,17 +13,17 @@ module.exports = {
       svg: dirname + 'src/sprite/**/*svg'
     },
     pug: {
-      allFiles: dirname + 'src/pug/**/*.{pug,jade}',
+      allFiles: [`${dirname}src/pug/modules/*.{pug,jade}`, `${dirname}src/pug/pages/*.{pug,jade}`, `${dirname}src/pug/*.{pug,jade}`],
       pages: dirname + 'src/pug/pages/*.{pug,jade}',
       data: dirname + 'src/pug/data.json'
     },
     postcss: {
-      allFiles: dirname + 'src/postcss/**/*.{css,pcss,scss}',
+      allFiles: [`${dirname}src/postcss/modules/*.{css,scss,sass,postcss}`, `${dirname}src/postcss/pages/*.{css,scss,sass,postcss}`, `${dirname}src/postcss/*.{css,scss,sass,postcss}`],
       files: {
-        libs: dirname + 'src/postcss/libs.{css,pcss,scss}'
+        libs: dirname + 'src/postcss/libs.*'
       },
       pages: {
-        files: dirname + 'src/postcss/pages/*.{css,pcss,scss}'
+        files: dirname + 'src/postcss/pages/*.*'
       }
     },
     js: {

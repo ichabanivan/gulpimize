@@ -5,15 +5,15 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
-  gulp         = require('gulp'),         // The streaming build system
-  HubRegistry  = require('gulp-hub'),     // A gulp plugin to run tasks from multiple gulpfiles
-  browsersync  = require('browser-sync'), // Live CSS Reload & Browser Syncing
+gulp         = require('gulp'),         // The streaming build system
+HubRegistry  = require('gulp-hub'),     // A gulp plugin to run tasks from multiple gulpfiles
+browserSync  = require('browser-sync'), // Live CSS Reload & Browser Syncing
 
-  PATH = require('./path.js'); // Path config structure
+PATH = require('./gulp/path.js'); // Path config structure
 
 // Load some files into the registry
 
-let hub = new HubRegistry(['tasks/*.js']);
+let hub = new HubRegistry(['gulp/tasks/*.js']);
 
 // Tell gulp to use the tasks just loaded
 
@@ -28,7 +28,7 @@ gulp.task('watch', () => {
   gulp.watch(PATH.src.postcss.allFiles, gulp.series('postcss'));
   gulp.watch(PATH.src.postcss.files.libs, gulp.series('css:libs'));
   gulp.watch(PATH.src.img.allFiles, gulp.series('img'));
-  gulp.watch(PATH.build.js.allFiles).on('change', browsersync.reload);
+  gulp.watch(PATH.build.js.allFiles).on('change', browserSync.reload);
 });
 
 // The build task
@@ -38,7 +38,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-      'symbols', 'assets', 'css:libs', 'postcss', 'img', 'es6'
+    'symbols', 'assets', 'css:libs', 'postcss', 'img', 'es6'
     ),
     gulp.series('pug')
   )
@@ -47,7 +47,7 @@ gulp.task(
 // The default task (called when you run `gulp` from cli)
 
 gulp.task(
-  'default',
+'default',
   gulp.series(
     'clean',
     gulp.parallel(

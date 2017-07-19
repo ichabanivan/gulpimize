@@ -1,8 +1,8 @@
-extends ../template
+extends ../_template
 include ../_mixin
 
-block title
-  title Gulpimize
+block variables
+  - var title = 'Gulpimize'
 
 block description
   meta(name='Gulpimize', content='Basic template for quickly getting started')
@@ -21,3 +21,7 @@ block js
   script(defer src="js/index.js")
 
 block content
+  ul.menu_list
+    each link,title in data.navPages
+      li
+        a(href= link).menu_link= title

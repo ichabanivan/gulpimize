@@ -1,11 +1,12 @@
 include _mixin
+block variables
 
 doctype html
 html
   head
     meta(charset='utf-8')
 
-    block title
+    title #{title}
     block description
 
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -34,7 +35,9 @@ html
     // Custom Browsers Color Start
     block color
     // Custom Browsers Color End
-
+    <!--[if lt IE 9]>
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+    <![endif]-->
   body.body
 
     // Custom HTML Start
