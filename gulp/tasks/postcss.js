@@ -86,3 +86,12 @@ gulp.task('postcss', () => {
     .pipe(production(combine(rev.manifest('css.json'), gulp.dest(PATH.src.manifest.folder))))
     .pipe(browserSync.reload({stream: true}));
 });
+
+
+var gs		= require('gulp-selectors');
+
+gulp.task('selectors', () => {
+  return gulp.src(['build/**/*.css', 'build/**/*.html'])
+    .pipe(gs.run())
+    .pipe(gulp.dest('./dist/'));
+});
