@@ -8,7 +8,7 @@
 
 ```bash
 $ git clone https://github.com/zanusilker/gulpimize
-$ cd gulpimize/ && yarn install
+$ cd gulpimize/ && yarn
 $ npm run gulp
 ```
 
@@ -25,5 +25,11 @@ git commit -m "Initialized with Gulpimize"
 
 * Gulp - Automate and enhance your workflow
 * Pug - Terse language for writing HTML templates.
-* PostCSS - CSS with superpowers.
+* SASS - CSS with superpowers.
 * Babel - Use next generation JavaScript, today (ES5 => ES6).
+
+### Makes your code beautiful
+
+```
+csscomb src/sass
+```

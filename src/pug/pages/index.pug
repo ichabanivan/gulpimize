@@ -11,17 +11,10 @@ block color
   +color('#3A4446')
 
 block styles
-  link(rel="stylesheet" href="css/libs.css")
   link(rel="stylesheet" href="css/main.css")
 
 block js
-  script(defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-  script(defer src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js")
-  script(defer src="js/commons.js")
+  //script(defer src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
   script(defer src="js/index.js")
 
 block content
-  ul.menu_list
-    each link,title in data.navPages
-      li
-        a(href= link).menu_link= title

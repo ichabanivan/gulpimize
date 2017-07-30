@@ -25,7 +25,6 @@ node_modules
 bower_components
 .idea
 src/manifest
-build
 gulpfile.js/temp
 
 # Optional npm cache directory

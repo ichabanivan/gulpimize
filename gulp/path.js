@@ -17,13 +17,13 @@ module.exports = {
       pages: dirname + 'src/pug/pages/*.{pug,jade}',
       data: dirname + 'src/pug/data.json'
     },
-    postcss: {
-      allFiles: [`${dirname}src/postcss/modules/*.{css,scss,sass,postcss}`, `${dirname}src/postcss/pages/*.{css,scss,sass,postcss}`, `${dirname}src/postcss/*.{css,scss,sass,postcss}`],
+    sass: {
+      allFiles: [`${dirname}src/sass/modules/*.{css,scss,sass,pcss}`, `${dirname}src/sass/pages/*.{css,scss,sass,pcss}`, `${dirname}src/sass/*.{css,scss,sass,pcss}`],
       files: {
-        libs: dirname + 'src/postcss/libs.*'
+        libs: dirname + 'src/sass/libs.*'
       },
       pages: {
-        files: dirname + 'src/postcss/pages/*.*'
+        files: dirname + 'src/sass/pages/*.*'
       }
     },
     js: {

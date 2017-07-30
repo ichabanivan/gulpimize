@@ -1,14 +1,14 @@
 // Сompile your PostCSS templates into CSS
 
+/* eslint-disable quotes */
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
   gulp         = require('gulp'),                 // The streaming build system
   browserSync  = require('browser-sync'),         // Live CSS Reload & Browser Syncing
   postcss      = require('gulp-postcss'),         // Pipe CSS through PostCSS processors with a single parse
+  sass         = require('gulp-sass'),            // Sass plugin for Gulp.
   scss         = require('postcss-scss'),         // SCSS parser for PostCSS.
-  shorthand    = require('gulp-shorthand'),       // Makes your CSS files lighter and more readable
-  combine      = require('stream-combiner2').obj, // This is a sequel to [stream-combiner](https://npmjs.org/package/stream-combiner) for streams3.
   plumber      = require('gulp-plumber'),         // Prevent pipe breaking caused by errors from gulp plugins
   notify       = require('gulp-notify'),          // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
   environments = require('gulp-environments'),    // A library for easily adding environments (development/production) to Gulp
@@ -16,7 +16,6 @@ const
   replace      = require('gulp-replace'),         // A string replace plugin for gulp
   rename       = require('gulp-rename'),          // Rename files
   csso         = require('gulp-csso'),            // Minify CSS with CSSO.
-  rev          = require('gulp-rev'),             // Static asset revisioning by appending content hash to filenames: unicorn.css => unicorn-d41d8cd98f.css
 
   PATH = require('../path');
 
@@ -25,7 +24,6 @@ let
   production  = environments.production;
 
 let
-  precss          = require('precss'),
   postcssImport   = require('postcss-import'),
   pxtorem         = require('postcss-pxtorem')({
     rootValue: 16,               // (Number) The root element font size.
@@ -36,62 +34,56 @@ let
     mediaQuery: true,            // false // (Boolean) Allow px to be converted in media queries.
     minPixelValue: 4             // (Number) Set the minimum pixel value to replace.
   }),
-  discardComments = require('postcss-discard-comments')({
-    removeAll: true
-  }),
   mqpacker        = require('css-mqpacker'),
-  cssnext         = require('postcss-cssnext')({
-    browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7']
-  }),
   assets          = require('postcss-assets')({
     loadPaths: ['./src/img/'],
-    relativeTo: './src/postcss/'
+    relativeTo: './src/sass/'
+  }),
+  cssnext         = require('postcss-cssnext')({
+    browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7']
   }),
   short           = require('postcss-short'),
   sorting         = require('postcss-sorting'),
   flexbugs        = require('postcss-flexbugs-fixes');
 
-const processors = [
-  precss, postcssImport, cssnext, pxtorem, assets, short, mqpacker, sorting, flexbugs, discardComments
+const preProcessors = [
+  postcssImport, cssnext, pxtorem, assets, short
 ];
 
-gulp.task('postcss', () => {
-  return gulp.src(PATH.src.postcss.pages.files)
+const postProcessors = [
+  mqpacker, sorting, flexbugs
+];
+
+gulp.task('sass', () => {
+  return gulp.src(PATH.src.sass.pages.files)
     .pipe(plumber({
       errorHandler: notify.onError((err) => {
         return {
-          title: 'postcss',
+          title: 'sass',
           message: err.message
         }
       })
     }))
     // If it's development this plugin will start to write sourcemaps
     .pipe(development(sourcemaps.init()))
-    .pipe(postcss(processors, {
+    .pipe(postcss(preProcessors, {
       syntax: scss
     }))
-    // Makes your CSS files lighter and more readable
-    .pipe(shorthand())
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }))
+    .pipe(postcss(postProcessors, {
+      syntax: scss
+    }))
     // Remove empty lines
     .pipe(replace(/^\s*\n/mg, '\n'))
     .pipe(rename({
       extname: '.css'
     }))
     // If it's production this plugin will minify css and create manifest
-    .pipe(production(combine(csso(), rev())))
+    .pipe(production(csso()))
     // If it's development this plugin will finish to write sourcemaps
     .pipe(development(sourcemaps.write()))
     .pipe(gulp.dest(PATH.build.css.folder))
-    // If it's production this plugin will write manifest in css.json and unload into manifest folder
-    .pipe(production(combine(rev.manifest('css.json'), gulp.dest(PATH.src.manifest.folder))))
     .pipe(browserSync.reload({stream: true}));
-});
-
-
-var gs		= require('gulp-selectors');
-
-gulp.task('selectors', () => {
-  return gulp.src(['build/**/*.css', 'build/**/*.html'])
-    .pipe(gs.run())
-    .pipe(gulp.dest('./dist/'));
 });

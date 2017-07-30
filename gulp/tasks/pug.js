@@ -9,7 +9,6 @@ const
   notify       = require('gulp-notify'),       // Notification plugin for gulp
   pug          = require('gulp-pug'),          // Gulp plugin for compiling Pug templates
   fs           = require('fs'),                // File System
-  revReplace   = require('gulp-rev-replace'),  // Rewrite occurences of filenames which have been renamed by gulp-rev
   environments = require('gulp-environments'), // A library for easily adding environments (development/production) to Gulp
 
   PATH = require('../path');
@@ -36,10 +35,6 @@ gulp.task('pug', () => {
       },
       pretty: '  '
     }))
-    // If it's production then includes all the file with their new names from manifest file
-    .pipe(production(revReplace({
-      manifest: gulp.src(PATH.src.manifest.allFiles, {allowEmpty: true})
-    })))
     .pipe(gulp.dest(PATH.build.folder))
     .pipe(browserSync.reload({stream: true}));
 });

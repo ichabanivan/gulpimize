@@ -25,8 +25,8 @@ gulp.registry(hub);
 gulp.task('watch', () => {
   gulp.watch(PATH.src.js.allFiles, gulp.series('es6'));
   gulp.watch(PATH.src.pug.allFiles, gulp.series('pug'));
-  gulp.watch(PATH.src.postcss.allFiles, gulp.series('postcss'));
-  gulp.watch(PATH.src.postcss.files.libs, gulp.series('css:libs'));
+  gulp.watch(PATH.src.sass.allFiles, gulp.series('sass'));
+  gulp.watch(PATH.src.sass.files.libs, gulp.series('css:libs'));
   gulp.watch(PATH.src.img.allFiles, gulp.series('img'));
   gulp.watch(PATH.build.js.allFiles).on('change', browserSync.reload);
 });
@@ -38,7 +38,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-    'symbols', 'assets', 'css:libs', 'postcss', 'img', 'es6'
+    'symbols', 'assets', 'sass', 'img', 'es6'
     ),
     gulp.series('pug')
   )
@@ -51,7 +51,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-      'symbols', 'assets', 'css:libs', 'postcss', 'img', 'es6'
+      'symbols', 'assets', 'sass', 'img', 'es6'
     ),
     gulp.series('pug'),
     gulp.parallel('server', 'watch')

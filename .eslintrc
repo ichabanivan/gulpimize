@@ -7,10 +7,12 @@
     "browser": true
   },
 
-  "ecmaFeatures": {
-    "modules": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true
+    }
   },
-  
+
   "rules": {
     "linebreak-style": 0,
     "extra-semi": 0,

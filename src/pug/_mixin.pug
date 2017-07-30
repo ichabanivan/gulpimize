@@ -6,6 +6,6 @@ mixin color(color)
   // iOS Safari
   meta(name='apple-mobile-web-app-status-bar-style', content=color)
 
-mixin icon(name)
+mixin svg(name)
   svg(class=name)
-    use(xlink:href="img/symbols.svg#" + name)
+    use(xlink:href='img/symbols.svg#' + name)
