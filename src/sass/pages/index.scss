@@ -1,16 +1,92 @@
 @import "../_base.scss";
 
+.github-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  overflow: hidden;
+
+  width: 120px;
+  height: 120px;
+}
+
+.github-corner a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transform: translate(50%, -50%) rotate(45deg);
+
+  color: #c67741;
+}
+
 body {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-  background-color: darkseagreen;
+  background-color: #3a4446;
+}
+
+.text {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
+  display: block;
+
+  margin: 0;
+  padding: 20px;
+
+  text-align: center;
+
+  color: #c67741;
+
+  font-family: "Lato", sans-serif;
+  font-size: 200px;
+  font-weight: 400;
+  font-style: italic;
+
+  @media (width <= 992px) {
+    font-size: 100px;
+  }
+}
+
+p {
+  display: block;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #faf5e5;
+
+  font-size: 52px;
+
+  @media (width <= 992px) {
+    font-size: 26px;
+  }
+}
+
+.frappe {
   margin: auto;
 
-  color: #6d3224;
+  cursor: pointer;
 
-  font-family: Arial, sans-serif;
-  font-size: 120px;
+  size: 500px;
+
+  @media (width <= 992px) {
+    size: 250px;
+  }
 }
