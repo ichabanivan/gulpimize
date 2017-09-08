@@ -75,7 +75,8 @@
     <script defer src="js/index.js"></script>
     <!-- Loading JS End-->
     <!-- Loading CSS Start-->
-    <!--link(href="css/index.css" rel="preload" as="style")-->
+    <!--link(href="css/index.css" rel="preload" as="style")--><link rel="stylesheet" href="css/index.css" media="none" onload="if(media!='all')media='all'">
+<noscript><link rel="stylesheet" href="css/index.css"></noscript>
     <!-- Loading CSS End-->
     <!--  Google fonts cdn-->
     <script>
@@ -93,36 +94,6 @@
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
       })();
-      
-      
     </script>
-    <!-- loadCSS-->
-    <script async src="//cdn.rawgit.com/filamentgroup/loadCSS/6b637fe0/src/cssrelpreload.js"></script>
-    <script async src="//cdn.rawgit.com/filamentgroup/loadCSS/6b637fe0/src/loadCSS.js"></script>
-    <script async src="//cdn.rawgit.com/filamentgroup/loadCSS/6b637fe0/src/onloadCSS.js"></script>
-    <script>
-      /*!
-      loadCSS: load a CSS file asynchronously.
-      */
-      function loadCSS(href){
-        var ss = window.document.createElement('link'),
-          ref = window.document.getElementsByTagName('head')[0];
-        ss.rel = 'stylesheet';
-        ss.href = href;
-        // temporarily, set media to something non-matching to ensure it'll
-        // fetch without blocking render
-        ss.media = 'only x';
-        ref.parentNode.insertBefore(ss, ref);
-        setTimeout( function(){
-          // set media back to `all` so that the stylesheet applies once it loads
-          ss.media = 'all';
-        },0);
-      }
-      loadCSS('css/index.css');
-    </script>
-    <noscript>
-      <!-- Let's not assume anything-->
-      <link rel="stylesheet" href="css/index.css">
-    </noscript>
   </body>
 </html>

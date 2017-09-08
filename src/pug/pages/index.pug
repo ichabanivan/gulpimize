@@ -12,6 +12,8 @@ block color
 
 block styles
   //link(href="css/index.css" rel="preload" as="style")
+  <link rel="stylesheet" href="css/index.css" media="none" onload="if(media!='all')media='all'">
+  <noscript><link rel="stylesheet" href="css/index.css"></noscript>
 
 block js
   script(defer src="js/commons.js")
