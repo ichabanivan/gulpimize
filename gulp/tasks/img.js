@@ -3,13 +3,13 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
-  gulp        = require('gulp'),          // The streaming build system
-  browserSync = require('browser-sync'),  // Live CSS Reload & Browser Syncing
+  gulp        = require('gulp'), // The streaming build system
+  browserSync = require('browser-sync'), // Live CSS Reload & Browser Syncing
   imagemin    = require('gulp-imagemin'), // Minify PNG, JPEG, GIF and SVG images
-  newer       = require('gulp-newer'),    // Only pass through newer source files
-  cache       = require('gulp-cache'),    // A cache proxy plugin for gulp
-  plumber     = require('gulp-plumber'),  // Prevent pipe breaking caused by errors from gulp plugins
-  notify      = require('gulp-notify'),   // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
+  newer       = require('gulp-newer'), // Only pass through newer source files
+  cache       = require('gulp-cache'), // A cache proxy plugin for gulp
+  plumber     = require('gulp-plumber'), // Prevent pipe breaking caused by errors from gulp plugins
+  notify      = require('gulp-notify'), // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
 
   PATH = require('../path');
 

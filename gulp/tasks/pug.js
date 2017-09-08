@@ -3,13 +3,14 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
-  gulp         = require('gulp'),              // The streaming build system
-  browserSync  = require('browser-sync'),      // Live CSS Reload & Browser Syncing
-  plumber      = require('gulp-plumber'),      // Prevent pipe breaking caused by errors from gulp plugins
-  notify       = require('gulp-notify'),       // Notification plugin for gulp
-  pug          = require('gulp-pug'),          // Gulp plugin for compiling Pug templates
-  fs           = require('fs'),                // File System
+  gulp         = require('gulp'), // The streaming build system
+  browserSync  = require('browser-sync'), // Live CSS Reload & Browser Syncing
+  plumber      = require('gulp-plumber'), // Prevent pipe breaking caused by errors from gulp plugins
+  notify       = require('gulp-notify'), // Notification plugin for gulp
+  pug          = require('gulp-pug'), // Gulp plugin for compiling Pug templates
+  fs           = require('fs'), // File System
   environments = require('gulp-environments'), // A library for easily adding environments (development/production) to Gulp
+  w3cjs        = require('gulp-w3cjs'), // w3cjs wrapper for gulp to validate your HTML
 
   PATH = require('../path');
 
@@ -36,5 +37,6 @@ gulp.task('pug', () => {
       pretty: '  '
     }))
     .pipe(gulp.dest(PATH.build.folder))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.reload({stream: true}))
+    .pipe(w3cjs())
 });

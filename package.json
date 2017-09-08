@@ -1,6 +1,6 @@
 {
   "name": "gulpimize",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Basic template for quickly getting started",
   "main": "index.js",
   "license": "MIT",
@@ -8,9 +8,10 @@
     "gulp": "node_modules/.bin/gulp --env development",
     "prod": "node_modules/.bin/gulp --env production",
     "build": "node_modules/.bin/gulp build --env production",
-    "csscomb": "csscomb sass"
+    "csscomb": "csscomb src/sass"
   },
   "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
@@ -27,7 +28,7 @@
     "fs": "^0.0.1-security",
     "fs-extra": "^4.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-babel": "^6.1.2",
+    "gulp-babel": "^7.0.0",
     "gulp-cache": "^0.4.6",
     "gulp-csso": "^3.0.0",
     "gulp-environments": "^0.1.2",
@@ -48,8 +49,9 @@
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uncss": "^1.0.6",
+    "gulp-w3cjs": "^1.3.0",
     "gulplog": "^1.0.0",
-    "postcss-assets": "^4.2.0",
+    "postcss-assets": "^5.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-import": "^10.0.0",
@@ -57,12 +59,16 @@
     "postcss-scss": "^1.0.2",
     "postcss-short": "^4.1.0",
     "postcss-sorting": "^3.0.1",
+    "postcss-uncss": "^0.15.0",
     "stream-combiner2": "^1.1.1",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
-    "vinyl-named": "^1.1.0"
+    "vinyl-named": "^1.1.0",
+    "webpack": "^3.5.6",
+    "webpack-stream": "^4.0.0"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "normalize.css": "^7.0.0"
   }
 }

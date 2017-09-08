@@ -4,7 +4,7 @@
 
 const
   gulp = require('gulp'), // The streaming build system
-  del  = require('del'),  // Delete files and folders
+  del  = require('del'), // Delete files and folders
 
   PATH = require('../path');
 

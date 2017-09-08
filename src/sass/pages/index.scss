@@ -1,0 +1,16 @@
+@import "../_base.scss";
+
+body {
+  display: flex;
+
+  background-color: darkseagreen;
+}
+
+h1 {
+  margin: auto;
+
+  color: #6d3224;
+
+  font-family: Arial, sans-serif;
+  font-size: 120px;
+}

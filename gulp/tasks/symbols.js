@@ -3,10 +3,10 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
-  gulp         = require('gulp'),          // The streaming build system
-  rename       = require('gulp-rename'),   // Gulp-rename is a gulp plugin to rename files easily.
+  gulp         = require('gulp'), // The streaming build system
+  rename       = require('gulp-rename'), // Gulp-rename is a gulp plugin to rename files easily.
   svgstore     = require('gulp-svgstore'), // Combine svg files into one with <symbol> elements.
-  svgmin       = require('gulp-svgmin'),   // Minify SVG with SVGO.
+  svgmin       = require('gulp-svgmin'), // Minify SVG with SVGO.
 
   PATH = require('../path');
 

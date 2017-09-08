@@ -5,11 +5,11 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
-gulp         = require('gulp'),         // The streaming build system
-HubRegistry  = require('gulp-hub'),     // A gulp plugin to run tasks from multiple gulpfiles
-browserSync  = require('browser-sync'), // Live CSS Reload & Browser Syncing
+  gulp         = require('gulp'), // The streaming build system
+  HubRegistry  = require('gulp-hub'), // A gulp plugin to run tasks from multiple gulpfiles
+  browserSync  = require('browser-sync'), // Live CSS Reload & Browser Syncing
 
-PATH = require('./gulp/path.js'); // Path config structure
+  PATH = require('./gulp/path.js'); // Path config structure
 
 // Load some files into the registry
 
@@ -23,13 +23,12 @@ gulp.registry(hub);
 // Rerun the task when a file changes
 
 gulp.task('watch', () => {
-  gulp.watch(PATH.src.js.allFiles, gulp.series('es6'));
   gulp.watch(PATH.src.img.svg, gulp.series('symbols'));
   gulp.watch(PATH.src.pug.allFiles, gulp.series('pug'));
   gulp.watch(PATH.src.sass.allFiles, gulp.series('sass'));
   gulp.watch(PATH.src.sass.files.libs, gulp.series('css:libs'));
   gulp.watch(PATH.src.img.allFiles, gulp.series('img'));
-  gulp.watch(PATH.build.js.allFiles).on('change', browserSync.reload);
+  gulp.watch(PATH.src.js.allFiles, gulp.series('webpack'));
 });
 
 // The build task
@@ -39,7 +38,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-      'symbols', 'assets', 'sass', 'img', 'es6'
+      'symbols', 'assets', 'sass', 'img', 'webpack'
     ),
     gulp.series('pug')
   )
@@ -52,7 +51,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-      'symbols', 'assets', 'sass', 'img', 'es6'
+      'symbols', 'assets', 'sass', 'img', 'webpack'
     ),
     gulp.series('pug'),
     gulp.parallel('server', 'watch')

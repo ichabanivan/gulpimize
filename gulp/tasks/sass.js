@@ -4,18 +4,18 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const
-  gulp         = require('gulp'),                 // The streaming build system
-  browserSync  = require('browser-sync'),         // Live CSS Reload & Browser Syncing
-  postcss      = require('gulp-postcss'),         // Pipe CSS through PostCSS processors with a single parse
-  sass         = require('gulp-sass'),            // Sass plugin for Gulp.
-  scss         = require('postcss-scss'),         // SCSS parser for PostCSS.
-  plumber      = require('gulp-plumber'),         // Prevent pipe breaking caused by errors from gulp plugins
-  notify       = require('gulp-notify'),          // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
-  environments = require('gulp-environments'),    // A library for easily adding environments (development/production) to Gulp
-  sourcemaps   = require('gulp-sourcemaps'),      // Source map support for Gulp.js
-  replace      = require('gulp-replace'),         // A string replace plugin for gulp
-  rename       = require('gulp-rename'),          // Rename files
-  csso         = require('gulp-csso'),            // Minify CSS with CSSO.
+  gulp         = require('gulp'), // The streaming build system
+  browserSync  = require('browser-sync'), // Live CSS Reload & Browser Syncing
+  postcss      = require('gulp-postcss'), // Pipe CSS through PostCSS processors with a single parse
+  sass         = require('gulp-sass'), // Sass plugin for Gulp.
+  scss         = require('postcss-scss'), // SCSS parser for PostCSS.
+  plumber      = require('gulp-plumber'), // Prevent pipe breaking caused by errors from gulp plugins
+  notify       = require('gulp-notify'), // Gulp plugin to send messages based on Vinyl Files or Errors to Mac OS X, Linux or Windows using the node-notifier module. Fallbacks to Growl or simply logging
+  environments = require('gulp-environments'), // A library for easily adding environments (development/production) to Gulp
+  sourcemaps   = require('gulp-sourcemaps'), // Source map support for Gulp.js
+  replace      = require('gulp-replace'), // A string replace plugin for gulp
+  rename       = require('gulp-rename'), // Rename files
+  csso         = require('gulp-csso'), // Minify CSS with CSSO.
 
   PATH = require('../path');
 
@@ -26,13 +26,13 @@ let
 let
   postcssImport   = require('postcss-import'),
   pxtorem         = require('postcss-pxtorem')({
-    rootValue: 16,               // (Number) The root element font size.
-    unitPrecision: 5,            // (Number) The decimal numbers to allow the REM units to grow to.
-    propWhiteList: [],           // (Array) The properties that can change from px to rem.
+    rootValue: 16, // (Number) The root element font size.
+    unitPrecision: 5, // (Number) The decimal numbers to allow the REM units to grow to.
+    propWhiteList: [], // (Array) The properties that can change from px to rem.
     selectorBlackList: ['html'], // (Array) The selectors to ignore and leave as px.
-    replace: true,               // (Boolean) replaces rules containing rems instead of adding fallbacks.
-    mediaQuery: true,            // false // (Boolean) Allow px to be converted in media queries.
-    minPixelValue: 4             // (Number) Set the minimum pixel value to replace.
+    replace: true, // (Boolean) replaces rules containing rems instead of adding fallbacks.
+    mediaQuery: true, // false // (Boolean) Allow px to be converted in media queries.
+    minPixelValue: 4 // (Number) Set the minimum pixel value to replace.
   }),
   mqpacker        = require('css-mqpacker'),
   assets          = require('postcss-assets')({
@@ -44,10 +44,14 @@ let
   }),
   short           = require('postcss-short'),
   sorting         = require('postcss-sorting'),
+  uncss           = require('postcss-uncss')({
+    html: PATH.build.html.allFiles,
+    ignore: ['.ignore-class']
+  }),
   flexbugs        = require('postcss-flexbugs-fixes');
 
 const preProcessors = [
-  postcssImport, cssnext, pxtorem, assets, short
+  postcssImport, cssnext, /* pxtorem, */ /* uncss, */ assets, short
 ];
 
 const postProcessors = [
