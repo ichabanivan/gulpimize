@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69dc4cc5-9f0b-4cd6-988c-c166f8964560" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/css/index.css" afterPath="$PROJECT_DIR$/build/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/symbols.svg" afterPath="$PROJECT_DIR$/build/img/symbols.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/commons.js" afterPath="$PROJECT_DIR$/build/js/commons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/index.js" afterPath="$PROJECT_DIR$/build/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/index.js" afterPath="$PROJECT_DIR$/src/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/preloader.js" afterPath="$PROJECT_DIR$/src/js/modules/preloader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pug/_template.pug" afterPath="$PROJECT_DIR$/src/pug/_template.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pug/pages/index.pug" afterPath="$PROJECT_DIR$/src/pug/pages/index.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/pages/index.scss" afterPath="$PROJECT_DIR$/src/sass/pages/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sprite/frappe.svg" afterPath="$PROJECT_DIR$/src/sprite/frappe.svg" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_template.pug" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_template.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pug/_template.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="79" column="40" lean-forward="false" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+            <state relative-caret-position="715">
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="90" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -73,19 +63,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-567">
+            <state relative-caret-position="-1149">
               <caret line="9" column="51" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="28" selection-end-column="40" />
-              <folding>
-                <marker date="1504866021051" expanded="true" signature="2047:2344" ph="..." />
-                <marker date="1504866021051" expanded="true" signature="2066:2220" ph="{...}" />
-                <marker date="1504866021051" expanded="true" signature="2249:2325" ph="{...}" />
-                <marker date="1504866021051" expanded="true" signature="2349:2465" ph="..." />
-                <marker date="1504866021051" expanded="true" signature="2499:4377" ph="..." />
-                <marker date="1504866021051" expanded="true" signature="3824:4367" ph="..." />
-                <marker date="1504866021051" expanded="true" signature="3848:3952" ph="{...}" />
-                <marker date="1504866021051" expanded="true" signature="3866:3944" ph="{...}" />
-                <marker date="1504866021051" expanded="true" signature="3973:4350" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/pages/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="50" column="16" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+            <state relative-caret-position="-819">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -189,11 +169,11 @@
         <option value="$PROJECT_DIR$/gulpimize-config.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/pug/_template.pug" />
         <option value="$PROJECT_DIR$/src/js/modules/preloader.js" />
         <option value="$PROJECT_DIR$/src/js/index.js" />
         <option value="$PROJECT_DIR$/src/pug/pages/index.pug" />
         <option value="$PROJECT_DIR$/src/sass/pages/index.scss" />
+        <option value="$PROJECT_DIR$/src/pug/_template.pug" />
       </list>
     </option>
   </component>
@@ -426,12 +406,12 @@
       <updated>1504791285491</updated>
       <workItem from="1504791287113" duration="4736000" />
       <workItem from="1504808089110" duration="1085000" />
-      <workItem from="1504855219242" duration="10417000" />
+      <workItem from="1504855219242" duration="10580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16238000" />
+    <option name="totallyTimeSpent" value="16401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -442,7 +422,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.504931" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.512035" sideWeight="0.51785713" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37348068" sideWeight="0.49506903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37348068" sideWeight="0.49506903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49392265" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5184534" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124200426" sideWeight="0.48214287" order="0" side_tool="false" content_ui="combo" />
@@ -803,36 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="28" selection-end-column="40" />
-          <folding>
-            <marker date="1504866021051" expanded="true" signature="2047:2344" ph="..." />
-            <marker date="1504866021051" expanded="true" signature="2066:2220" ph="{...}" />
-            <marker date="1504866021051" expanded="true" signature="2249:2325" ph="{...}" />
-            <marker date="1504866021051" expanded="true" signature="2349:2465" ph="..." />
-            <marker date="1504866021051" expanded="true" signature="2499:4377" ph="..." />
-            <marker date="1504866021051" expanded="true" signature="3824:4367" ph="..." />
-            <marker date="1504866021051" expanded="true" signature="3848:3952" ph="{...}" />
-            <marker date="1504866021051" expanded="true" signature="3866:3944" ph="{...}" />
-            <marker date="1504866021051" expanded="true" signature="3973:4350" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulp/tasks/assets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pug/_template.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="79" column="40" lean-forward="false" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -889,8 +843,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/pages/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="50" column="16" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        <state relative-caret-position="-819">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1149">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="28" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pug/_template.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="90" selection-end-column="22" />
           <folding />
         </state>
       </provider>
