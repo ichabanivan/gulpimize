@@ -4,12 +4,9 @@
     <list default="true" id="69dc4cc5-9f0b-4cd6-988c-c166f8964560" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/css/index.css" afterPath="$PROJECT_DIR$/build/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/0.js" afterPath="$PROJECT_DIR$/build/js/0.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/commons.js" afterPath="$PROJECT_DIR$/build/js/commons.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/index.js" afterPath="$PROJECT_DIR$/build/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pug/_template.pug" afterPath="$PROJECT_DIR$/src/pug/_template.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pug/pages/index.pug" afterPath="$PROJECT_DIR$/src/pug/pages/index.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/src/pug/_template.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="867">
-              <caret line="94" column="12" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
+              <caret line="94" column="12" lean-forward="false" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
               <folding>
                 <marker date="1504871927607" expanded="true" signature="49:8032" ph="..." />
                 <marker date="1504871927607" expanded="true" signature="2146:8032" ph="..." />
@@ -94,9 +91,9 @@
         <entry file="file://$PROJECT_DIR$/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="95" column="13" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="95" selection-end-column="13" />
+              <caret line="226" column="13" lean-forward="false" selection-start-line="225" selection-start-column="13" selection-end-line="226" selection-end-column="13" />
               <folding>
-                <marker date="1504871852160" expanded="true" signature="4360:4375" ph="..." />
+                <marker date="1504872022049" expanded="true" signature="9487:9502" ph="..." />
               </folding>
             </state>
           </provider>
@@ -117,8 +114,8 @@
       <file leaf-file-name="index.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pug/pages/index.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="294">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -400,14 +397,13 @@
       <arguments />
       <envs />
     </configuration>
-    <configuration name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>default</task>
-      </tasks>
-      <arguments />
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
       <envs />
     </configuration>
     <configuration name="favicon" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
@@ -438,30 +434,20 @@
       <node-interpreter value="project" />
       <envs />
     </configuration>
-    <configuration name="pug" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>pug</task>
-      </tasks>
-      <arguments />
-      <envs />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Gulp.js.favicon" />
-      <item index="1" class="java.lang.String" itemvalue="Gulp.js.pug" />
-      <item index="2" class="java.lang.String" itemvalue="Gulp.js.default" />
-      <item index="3" class="java.lang.String" itemvalue="npm.gulp" />
-      <item index="4" class="java.lang.String" itemvalue="npm.prod" />
+      <item index="1" class="java.lang.String" itemvalue="npm.gulp" />
+      <item index="2" class="java.lang.String" itemvalue="npm.prod" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.build" />
+      <item index="4" class="java.lang.String" itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.gulp" />
-        <item index="1" class="java.lang.String" itemvalue="npm.prod" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.favicon" />
-        <item index="3" class="java.lang.String" itemvalue="Gulp.js.default" />
-        <item index="4" class="java.lang.String" itemvalue="Gulp.js.pug" />
+        <item index="0" class="java.lang.String" itemvalue="npm.prod" />
+        <item index="1" class="java.lang.String" itemvalue="npm.build" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.build" />
+        <item index="3" class="java.lang.String" itemvalue="npm.gulp" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.favicon" />
       </list>
     </recent_temporary>
   </component>
@@ -477,25 +463,24 @@
       <updated>1504791285491</updated>
       <workItem from="1504791287113" duration="4736000" />
       <workItem from="1504808089110" duration="1085000" />
-      <workItem from="1504855219242" duration="13664000" />
+      <workItem from="1504855219242" duration="13768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19485000" />
+    <option name="totallyTimeSpent" value="19589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="ReactNative" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.504931" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.124200426" sideWeight="0.5185185" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37348068" sideWeight="0.49506903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124200426" sideWeight="0.5185185" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37348068" sideWeight="0.49506903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49392265" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.124200426" sideWeight="0.5185185" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.124200426" sideWeight="0.5160221" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124200426" sideWeight="0.4814815" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -915,9 +900,9 @@
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="95" column="13" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="95" selection-end-column="13" />
+          <caret line="226" column="13" lean-forward="false" selection-start-line="225" selection-start-column="13" selection-end-line="226" selection-end-column="13" />
           <folding>
-            <marker date="1504871852160" expanded="true" signature="4360:4375" ph="..." />
+            <marker date="1504872022049" expanded="true" signature="9487:9502" ph="..." />
           </folding>
         </state>
       </provider>
@@ -925,7 +910,7 @@
     <entry file="file://$PROJECT_DIR$/src/pug/_template.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
-          <caret line="94" column="12" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
+          <caret line="94" column="12" lean-forward="false" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
           <folding>
             <marker date="1504871927607" expanded="true" signature="49:8032" ph="..." />
             <marker date="1504871927607" expanded="true" signature="2146:8032" ph="..." />
@@ -936,8 +921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pug/pages/index.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="294">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
