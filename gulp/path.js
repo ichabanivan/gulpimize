@@ -3,6 +3,12 @@ const dirname = './';
 module.exports = {
   src: {
     folder: `${dirname}src/`,
+    favicon: {
+      allFiles: `${dirname}/src/favicon/**.*`
+    },
+    assets: {
+      allFiles: `${dirname}src/assets/**/*`
+    },
     files: [
       `${dirname}src/.htaccess`,
       `${dirname}src/fonts/**/*`
@@ -26,15 +32,15 @@ module.exports = {
     },
     sass: {
       allFiles: [
-        `${dirname}src/sass/modules/*.{css,scss,sass,pcss}`,
-        `${dirname}src/sass/pages/*.{css,scss,sass,pcss}`,
-        `${dirname}src/sass/*.{css,scss,sass,pcss}`
+        `${dirname}src/sass/modules/*.{css,scss}`,
+        `${dirname}src/sass/pages/*.{css,scss}`,
+        `${dirname}src/sass/*.{css,scss}`
       ],
       files: {
-        libs: `${dirname}src/sass/libs.*`
+        libs: `${dirname}src/sass/libs.{css,scss}`
       },
       pages: {
-        files: `${dirname}src/sass/pages/*.*`
+        files: `${dirname}src/sass/pages/*.{css,scss}`
       }
     },
     js: {
@@ -56,7 +62,8 @@ module.exports = {
       folder: `${dirname}build/css`
     },
     js: {
-      folder: `${dirname}build/js`
+      folder: `${dirname}build/js`,
+      allFiles: `${dirname}build/js/*.*`
     },
     html: {
       allFiles: `${dirname}build/*.html`

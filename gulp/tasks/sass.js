@@ -16,6 +16,7 @@ const
   replace      = require('gulp-replace'), // A string replace plugin for gulp
   rename       = require('gulp-rename'), // Rename files
   csso         = require('gulp-csso'), // Minify CSS with CSSO.
+  purify       = require('gulp-purifycss'), // Clean unnecessary CSS with PurifyCSS
 
   PATH = require('../path');
 
@@ -44,14 +45,10 @@ let
   }),
   short           = require('postcss-short'),
   sorting         = require('postcss-sorting'),
-  uncss           = require('postcss-uncss')({
-    html: PATH.build.html.allFiles,
-    ignore: ['.ignore-class']
-  }),
   flexbugs        = require('postcss-flexbugs-fixes');
 
 const preProcessors = [
-  postcssImport, cssnext, /* pxtorem, */ /* uncss, */ assets, short
+  postcssImport, cssnext, /* pxtorem, */ assets, short
 ];
 
 const postProcessors = [
@@ -83,6 +80,43 @@ gulp.task('sass', () => {
     .pipe(replace(/^\s*\n/mg, '\n'))
     .pipe(rename({
       extname: '.css'
+    }))
+    // If it's production this plugin will minify css and create manifest
+    .pipe(production(csso()))
+    // If it's development this plugin will finish to write sourcemaps
+    .pipe(development(sourcemaps.write()))
+    .pipe(gulp.dest(PATH.build.css.folder))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('libs-css', () => {
+  return gulp.src(PATH.src.sass.files.libs)
+    .pipe(plumber({
+      errorHandler: notify.onError((err) => {
+        return {
+          title: 'libs-css',
+          message: err.message
+        }
+      })
+    }))
+    // If it's development this plugin will start to write sourcemaps
+    .pipe(development(sourcemaps.init()))
+    .pipe(postcss(preProcessors, {
+      syntax: scss
+    }))
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }))
+    .pipe(postcss(postProcessors, {
+      syntax: scss
+    }))
+    // Remove empty lines
+    .pipe(replace(/^\s*\n/mg, '\n'))
+    .pipe(rename({
+      extname: '.css'
+    }))
+    .pipe(purify([PATH.build.html.allFiles, PATH.build.js.allFiles], {
+      rejected: true
     }))
     // If it's production this plugin will minify css and create manifest
     .pipe(production(csso()))

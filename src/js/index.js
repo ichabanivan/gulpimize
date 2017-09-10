@@ -1,6 +1,13 @@
 // We includes modules and libraries here.
+import _ from 'lodash'
+import $ from 'jquery'
+import 'slick-carousel'
 
-import $ from 'jquery/dist/jquery.min.js';
+$('.slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
 
 import welcome from './modules/welcome';
 import preloader from './modules/preloader';
@@ -10,6 +17,8 @@ $('.frappe').on("click", function () {
     require('./modules/dynamic');
   });
 });
+
+
 
 welcome('Hello');
 

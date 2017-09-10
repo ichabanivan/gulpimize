@@ -11,10 +11,9 @@ const
   fs           = require('fs'), // File System
   environments = require('gulp-environments'), // A library for easily adding environments (development/production) to Gulp
   w3cjs        = require('gulp-w3cjs'), // w3cjs wrapper for gulp to validate your HTML
+  include      = require('gulp-include'), // A plugin of gulp for file include
 
   PATH = require('../path');
-
-let production  = environments.production;
 
 gulp.task('pug', () => {
   // Include JSON with data for pug
@@ -36,6 +35,7 @@ gulp.task('pug', () => {
       },
       pretty: '  '
     }))
+    .pipe(include())
     .pipe(gulp.dest(PATH.build.folder))
     .pipe(browserSync.reload({stream: true}))
     .pipe(w3cjs())

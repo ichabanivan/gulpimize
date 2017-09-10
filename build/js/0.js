@@ -1,1 +1,1 @@
-webpackJsonp_name_([0],{6:function(a,n,c){"use strict";alert("Hi, I am from dynamic.js")}});
+webpackJsonp_name_([0],{13:function(a,n,c){"use strict";alert("Hi, I am from dynamic.js")}});

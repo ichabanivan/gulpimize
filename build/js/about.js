@@ -1,0 +1,1 @@
+var about=webpackJsonp_name_([2],[,,function(e,i,n){e.exports=n(3)},function(e,i,n){"use strict";var o=function(e){return e&&e.__esModule?e:{default:e}}(n(0));n(1),(0,o.default)(".slider").slick({infinite:!0,slidesToShow:1,slidesToScroll:1})}],[2]);

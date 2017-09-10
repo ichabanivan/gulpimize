@@ -19,13 +19,13 @@ gulp.task('dev-files', () => {
 });
 
 gulp.task('favicon', () => {
-  return gulp.src('./src/favicon/**.*')
+  return gulp.src(PATH.src.favicon.allFiles)
     .pipe(gulp.dest(PATH.build.folder))
     .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('files', () => {
-  return gulp.src('./src/assets/**.*')
+  return gulp.src(PATH.src.assets.allFiles)
     .pipe(gulp.dest(PATH.build.folder))
     .pipe(browserSync.reload({stream: true}))
 });

@@ -36,30 +36,15 @@ html
     block color
     // Custom Browsers Color End
 
-    style(type="text/css").
-      .preloader {
-        display: flex;
-        margin: auto;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: #ccc;
-      }
-
-      .preloader img {
-        width: 200px;
-        height: 100px;
-        margin: auto;
-      }
-
     <!--[if lt IE 9]>
       script(src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
     <![endif]-->
 
+    // Loading CSS Start
+    block styles
+    // Loading CSS End
 
   body.body
-    .preloader
-      img(src="img/preloader.svg" alt="preloader")
 
     // Custom HTML Start
     block content
@@ -69,17 +54,9 @@ html
     block js
     // Loading JS End
 
-    // Loading CSS Start
-    block styles
-    // Loading CSS End
-
     //  Google fonts cdn
     script.
-      WebFontConfig = {
-        google: {
-          families: ['Lato:300,400i,600,700', 'Open+Sans:400,700']
-        }
-      };
+      WebFontConfig = {google: {families: ['Lato:300,400i,600,700', 'Open+Sans:400,700']}};
       (function () {
         var wf = document.createElement('script');
         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
@@ -89,6 +66,9 @@ html
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
       })();
+
+
+
 
 
 
