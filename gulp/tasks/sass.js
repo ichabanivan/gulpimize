@@ -16,6 +16,7 @@ const
   replace      = require('gulp-replace'), // A string replace plugin for gulp
   rename       = require('gulp-rename'), // Rename files
   csso         = require('gulp-csso'), // Minify CSS with CSSO.
+  gcmq          = require('gulp-group-css-media-queries'), // CSS postprocessing: group media queries. Useful for postprocessing preprocessed CSS files.
   purify       = require('gulp-purifycss'), // Clean unnecessary CSS with PurifyCSS
 
   PATH = require('../path');
@@ -76,6 +77,7 @@ gulp.task('sass', () => {
     .pipe(postcss(postProcessors, {
       syntax: scss
     }))
+    .pipe(gcmq())
     // Remove empty lines
     .pipe(replace(/^\s*\n/mg, '\n'))
     .pipe(rename({
