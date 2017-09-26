@@ -35,36 +35,18 @@
     <!-- Custom Browsers Color End--><!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
     <!-- Loading CSS Start-->
-    <link rel="preload" href="css/libs.css" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="css/index.css" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="css/libs.css">
-      <link rel="stylesheet" href="css/index.css">
-    </noscript>
-    <script>
-      /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-      !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
-      /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
-      !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
-      
-    </script>
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- Loading CSS End-->
   </head>
   <body class="body">
     <!-- Custom HTML Start-->
-    <!-- You should remove next code-->
-    <div class="text">
-      <h1>Gulpimize</h1>
-      <p>Basic template for quickly getting started</p>
-      <svg class="frappe undefined">
-        <use xlink:href="img/symbols.svg#frappe"></use>
-      </svg>
-    </div>
-    <div class="github-corner"><a href="https://github.com/zanusilker/gulpimize/" title="Fork me on GitHub">
-        <svg viewbox="0 0 100 100" fill="currentColor">
-          <title>Fork me on GitHub</title>
-          <path d="M0 0v100h100V0H0zm60 70.2h.2c1 2.7.3 4.7 0 5.2 1.4 1.4 2 3 2 5.2 0 7.4-4.4 9-8.7 9.5.7.7 1.3 2 1.3 3.7V99c0 .5 1.4 1 1.4 1H44s1.2-.5 1.2-1v-3.8c-3.5 1.4-5.2-.8-5.2-.8-1.5-2-3-2-3-2-2-.5-.2-1-.2-1 2-.7 3.5.8 3.5.8 2 1.7 4 1 5 .3.2-1.2.7-2 1.2-2.4-4.3-.4-8.8-2-8.8-9.4 0-2 .7-4 2-5.2-.2-.5-1-2.5.2-5 0 0 1.5-.6 5.2 1.8 1.5-.4 3.2-.6 4.8-.6 1.6 0 3.3.2 4.8.7 2.8-2 4.4-2 5-2z"></path>
-        </svg></a></div>
+    <svg class="ddd">
+      <use xlink:href="img/symbols.svg#ddd"></use>
+    </svg>
+    <svg class="ddd dd">
+      <use xlink:href="img/symbols.svg#ddd"></use>
+    </svg>
     <!-- Custom HTML End-->
     <!-- Loading JS Start-->
     <script defer src="js/commons.js"></script>
