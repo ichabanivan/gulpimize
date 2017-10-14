@@ -5,10 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "gulp": "node_modules/.bin/gulp --env development",
+    "start": "node_modules/.bin/gulp --env development",
     "prod": "node_modules/.bin/gulp --env production",
-    "build": "node_modules/.bin/gulp build --env production",
-    "csscomb": "csscomb src/sass"
+    "build": "node_modules/.bin/gulp build --env production"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",
