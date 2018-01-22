@@ -64,7 +64,7 @@
     "stream-combiner2": "^1.1.1",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
-    "uncss": "^0.15.0",
+    "uncss": "^0.16.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^3.5.6",
     "webpack-stream": "^4.0.0"
