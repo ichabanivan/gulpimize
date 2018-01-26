@@ -59,7 +59,7 @@
     "postcss-pxtorem": "^4.0.1",
     "postcss-scss": "^1.0.2",
     "postcss-short": "^4.1.0",
-    "postcss-sorting": "^3.0.1",
+    "postcss-sorting": "^3.1.0",
     "postcss-uncss": "^0.15.0",
     "stream-combiner2": "^1.1.1",
     "stylelint": "^8.0.0",
