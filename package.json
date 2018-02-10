@@ -54,7 +54,7 @@
     "gulplog": "^1.0.0",
     "postcss-assets": "^5.0.0",
     "postcss-cssnext": "^3.0.2",
-    "postcss-flexbugs-fixes": "^3.0.0",
+    "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-import": "^10.0.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-scss": "^1.0.2",
