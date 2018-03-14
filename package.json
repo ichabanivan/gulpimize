@@ -62,7 +62,7 @@
     "postcss-sorting": "^3.0.1",
     "postcss-uncss": "^0.15.0",
     "stream-combiner2": "^1.1.1",
-    "stylelint": "^8.0.0",
+    "stylelint": "^9.1.2",
     "stylelint-config-standard": "^17.0.0",
     "uncss": "^0.15.0",
     "vinyl-named": "^1.1.0",
