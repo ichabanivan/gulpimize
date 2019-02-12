@@ -31,7 +31,7 @@
     "gulp-cache": "^0.4.6",
     "gulp-csso": "^3.0.0",
     "gulp-environments": "^0.1.2",
-    "gulp-eslint": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-hub": "github:frankwallis/gulp-hub#registry-init",
     "gulp-if": "^2.0.2",
