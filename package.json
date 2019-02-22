@@ -1,0 +1,24 @@
+{
+  "name": "gulpimize",
+  "version": "1.0.0",
+  "description": "* <a href=\"https://html2pug.herokuapp.com/\"> Html2pug converter\r * <a href=\"https://www.favicon-generator.org/\"> Favicon generator",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zanusilker/gulpimize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zanusilker/gulpimize/issues"
+  },
+  "homepage": "https://github.com/zanusilker/gulpimize#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-file-include": "^2.0.1"
+  }
+}
