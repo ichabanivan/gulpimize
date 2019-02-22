@@ -9,8 +9,8 @@ const dirs = {
  };
 
  const path = {
-	src: `${dirs.src}*.html`,
-	dest: `${dirs.dest}`
+	src: `${dirs.src}/*.html`,
+	dest: `${dirs.dest}/`
  };
 
 gulp.task('fileInclude', () => {
