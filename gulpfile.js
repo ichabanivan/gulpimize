@@ -1,11 +1,11 @@
 'use strict';
 
 const	gulp			= require ('gulp'),
-		fileInClude	= require('gulp-file-include');
+		fileInclude	= require('gulp-file-include');
 
-gulp.task('fileinclude', function() {
-	gulp.src(['index.html'])
-		.pipe(fileInClude({
+gulp.task('fileInclude', function() {
+	gulp.src(['./src/*.html'])
+		.pipe(fileInclude({
 			prefix: '@@',
 			basepath: '@file'
 		}))
