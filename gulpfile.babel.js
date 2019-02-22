@@ -3,6 +3,9 @@
 import gulp from 'gulp';
 import fileInclude from 'gulp-file-include';
 import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
+import csso from 'gulp-csso';
+import plumber from 'gulp-plumber';
 
 const dirs = {
 	src: 'src',
@@ -28,12 +31,24 @@ gulp.task('fileInclude', () => {
     .pipe(gulp.dest(htmlPath.dest));
 });
  
-gulp.task('scss', () => {
+gulp.task('style', () => {
   return gulp.src(scssPath.src)
-    .pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.init({loadMaps: true}))
+			.pipe(plumber())
+			.pipe(sass().on('error', sass.logError))
+			.pipe(csso({
+				restructure: false,
+				sourceMap: true,
+				debug: true
+			}))
+			.pipe(plumber.stop())
+		.pipe(sourcemaps.write())
     .pipe(gulp.dest((scssPath.dest)));
 });
  
-gulp.task('sass:watch', () => {
-  gulp.watch(scssPath.src, ['sass']);
-});
+
+// what is it for
+
+// gulp.task('sass:watch', () => {
+//   gulp.watch(scssPath.src, ['sass']);
+// });
