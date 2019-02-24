@@ -66,13 +66,13 @@ gulp.task('imageMin', () =>
 		imagemin.jpegtran({progressive: true}),
 		imagemin.optipng({optimizationLevel: 5}),
 		imagemin.svgo({
-				plugins: [
-						{removeViewBox: true},
-						{cleanupIDs: false}
-				]
+			plugins: [
+					{removeViewBox: true},
+					{cleanupIDs: false}
+			]
 		})
 	]))
-  .pipe(gulp.dest(imgPath.dest))
+	.pipe(gulp.dest(imgPath.dest))
 );
 
 gulp.task('clean', () => {

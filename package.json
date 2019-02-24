@@ -21,19 +21,17 @@
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
+    "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-csso": "^3.0.1",
     "gulp-file-include": "^2.0.1",
+    "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "node-sass": "^4.11.0"
   },
-  "dependencies": {
-    "del": "^3.0.0"
-  }
+  "dependencies": {}
 }
