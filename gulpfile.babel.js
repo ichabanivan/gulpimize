@@ -6,6 +6,9 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import csso from 'gulp-csso';
 import plumber from 'gulp-plumber';
+import autoprefixer from 'gulp-autoprefixer';
+import del from 'del';
+import imagemin from 'gulp-imagemin';
 
 const dirs = {
 	src: 'src',
@@ -22,6 +25,12 @@ const scssPath = {
 	dest: `${dirs.dest}/css`
 };
 
+const imgPath = {
+	src: `${dirs.src}/assets/img/**/*`,
+	dest: `${dirs.dest}/img`
+};
+
+
 gulp.task('fileInclude', () => {
   return gulp.src(htmlPath.src)
     .pipe(fileInclude({
@@ -36,6 +45,10 @@ gulp.task('style', () => {
 		.pipe(sourcemaps.init({loadMaps: true}))
 			.pipe(plumber())
 			.pipe(sass().on('error', sass.logError))
+			.pipe(autoprefixer({
+				browsers: ['last 2 versions'],
+				cascade: false
+			}))
 			.pipe(csso({
 				restructure: false,
 				sourceMap: true,
@@ -45,7 +58,28 @@ gulp.task('style', () => {
 		.pipe(sourcemaps.write())
     .pipe(gulp.dest((scssPath.dest)));
 });
- 
+
+gulp.task('imageMin', () =>
+	gulp.src(imgPath.src)
+	.pipe(imagemin([
+		imagemin.gifsicle({interlaced: true}),
+		imagemin.jpegtran({progressive: true}),
+		imagemin.optipng({optimizationLevel: 5}),
+		imagemin.svgo({
+				plugins: [
+						{removeViewBox: true},
+						{cleanupIDs: false}
+				]
+		})
+	]))
+  .pipe(gulp.dest(imgPath.dest))
+);
+
+gulp.task('clean', () => {
+	return del(['build']);
+});
+
+gulp.task('default', gulp.series('clean', gulp.parallel('fileInclude', 'style'), 'imageMin'));
 
 // what is it for
 
