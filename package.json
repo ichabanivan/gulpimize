@@ -33,7 +33,7 @@
     "gulp-environments": "^0.1.2",
     "gulp-eslint": "^4.0.0",
     "gulp-group-css-media-queries": "^1.2.0",
-    "gulp-hub": "github:frankwallis/gulp-hub#registry-init",
+    "gulp-hub": "^4.2.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-include": "^2.3.1",
