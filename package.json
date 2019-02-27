@@ -4,7 +4,10 @@
   "description": "* <a href=\"https://html2pug.herokuapp.com/\"> Html2pug converter\r * <a href=\"https://www.favicon-generator.org/\"> Favicon generator",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	 "test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node_modules/.bin/gulp --env development",
+		"prod": "node_modules/.bin/gulp --env production",
+		"build": "node_modules/.bin/gulp build --env production"
   },
   "repository": {
     "type": "git",

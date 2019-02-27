@@ -8,6 +8,7 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import del from 'del';
 import imagemin from 'gulp-imagemin';
+import environments from 'gulp-environments';
 
 import cssNext from 'postcss-cssnext'; // This plugin can replace autoprefixer. It makes sense? yesss
 import doIUse from 'doiuse';
@@ -29,6 +30,10 @@ const browserSync = bsCreate();
 	})
 }))
 */
+
+let
+  development = environments.development,
+  production  = environments.production;
 
 // TODO: Please make 1 object with nested properties
 const PATH = {
@@ -102,19 +107,19 @@ gulp.task('style', () => {
 				}
 			})
 		}))
-		.pipe(sourcemaps.init({loadMaps: true})) // TODO: Please add environments and use this line only if it is development
+		.pipe(development(sourcemaps.init({loadMaps: true}))) // TODO: Please add environments and use this line only if it is development
 			.pipe(newer(PATH.dirs.scss))
 			.pipe(sass({
 				outputStyle: 'expanded'
 			})) // Todo: Change to gulp plumber, you've forgotten about settings for sass outputStyle: 'expanded'
 			.pipe(postcss(postcssPlugins))
-			.pipe(csso({ // TODO: Please add environments and use this line only if it is production
+			.pipe(production(csso({ // TODO: Please add environments and use this line only if it is production
 				restructure: false,
 				sourceMap: true,
 				debug: true
-			}))
+			})))
 			.pipe(plumber.stop())
-		.pipe(sourcemaps.write())
+		.pipe(development(sourcemaps.write()))
     .pipe(gulp.dest((PATH.dirs.scss)));
 });
 
