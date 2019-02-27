@@ -35,7 +35,6 @@ let
   development = environments.development,
   production  = environments.production;
 
-// TODO: Please make 1 object with nested properties
 const PATH = {
 	src: {
 		html: './src/*.html',
@@ -50,7 +49,7 @@ const PATH = {
 	build: {
 		folder: './build'
 	}
-}
+};
 
 gulp.task('fileInclude', () => {
 	return gulp.src(PATH.src.html, {since: gulp.lastRun('fileInclude')})
@@ -85,7 +84,7 @@ gulp.task('style', () => {
 		doIUse ({
 			browsers: [
 				'ie >= 8',
-				'> 1%'
+				'> 1%'cssNext
 			],
 			ignore: ['rem'], // an optional array of features to ignore
 			ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
