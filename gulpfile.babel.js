@@ -10,7 +10,7 @@ import del from 'del';
 import imagemin from 'gulp-imagemin';
 import environments from 'gulp-environments';
 
-import cssNext from 'postcss-cssnext'; // This plugin can replace autoprefixer. It makes sense? yesss
+import cssNext from 'postcss-cssnext';
 import doIUse from 'doiuse';
 import flexBugs from 'postcss-flexbugs-fixes';
 
@@ -19,23 +19,10 @@ import watch from 'gulp-watch';
 import {create as bsCreate} from 'browser-sync';
 const browserSync = bsCreate();
 
-// TODO: Please use gulp-plumber
-/*
-.pipe(plumber({
-	errorHandler: notify.onError((err) => {
-		return {
-			title: 'sass',
-			message: err.message
-		}
-	})
-}))
-*/
-
 let
   development = environments.development,
   production  = environments.production;
 
-// TODO: Please make 1 object with nested properties
 const PATH = {
 	src: {
 		html: './src/*.html',
@@ -70,11 +57,6 @@ gulp.task('fileInclude', () => {
 		.pipe(gulp.dest(PATH.dirs.html));
 });
 
-// TODO: Please add postcss after sass
-// TODO: Please use autoprefixer like postcss plugin
-
-
-
 gulp.task('style', () => {
 
 	let postcssPlugins = [
@@ -107,13 +89,13 @@ gulp.task('style', () => {
 				}
 			})
 		}))
-		.pipe(development(sourcemaps.init({loadMaps: true}))) // TODO: Please add environments and use this line only if it is development
+		.pipe(development(sourcemaps.init({loadMaps: true})))
 			.pipe(newer(PATH.dirs.scss))
 			.pipe(sass({
 				outputStyle: 'expanded'
-			})) // Todo: Change to gulp plumber, you've forgotten about settings for sass outputStyle: 'expanded'
+			}))
 			.pipe(postcss(postcssPlugins))
-			.pipe(production(csso({ // TODO: Please add environments and use this line only if it is production
+			.pipe(production(csso({
 				restructure: false,
 				sourceMap: true,
 				debug: true
@@ -123,8 +105,6 @@ gulp.task('style', () => {
     .pipe(gulp.dest((PATH.dirs.scss)));
 });
 
-// TODO: Please, read about gulp-newer
-// TODO: You forgot about browserSync
 gulp.task('imageMin', () => {
 	return gulp.src(PATH.src.img, {since: gulp.lastRun('imageMin')})
 		.pipe(plumber({
@@ -150,11 +130,6 @@ gulp.task('imageMin', () => {
 		.pipe(gulp.dest(PATH.dirs.img))
 });
 
-/* TODO:
-  return del(PATH.build.folder, {
-    force: true
-  })
-*/
 gulp.task('clean', () => {
 	return del(PATH.build.folder, {
 		force: true
@@ -176,8 +151,6 @@ gulp.task('serve', () => {
 		},
     notify: false
 	});
-	
-	// browserSync.watch('build/**/*.*').on('change', browserSync.reload);
 })
 
 gulp.task('default', 
