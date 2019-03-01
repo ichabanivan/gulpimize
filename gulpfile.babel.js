@@ -32,7 +32,7 @@ const PATH = {
 	},
 	dirs: {
 		html: './build/',
-		scss: './build/css',
+		scss: './build/css/',
 		img: './build/img'
 	},
 	build: {
@@ -55,7 +55,8 @@ gulp.task('fileInclude', () => {
 			prefix: '@@',
 				basepath: '@file'
 			}))
-		.pipe(gulp.dest(PATH.dirs.html));
+		.pipe(gulp.dest(PATH.dirs.html))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('style', () => {
@@ -65,17 +66,17 @@ gulp.task('style', () => {
 			browsers: ['last 10 versions', '> 0.5%'],
 			cascade: false
 		}),
-		doIUse ({
-			browsers: [
-				'ie >= 8',
-				'> 1%'
-			],
-			ignore: ['rem'], // an optional array of features to ignore
-			ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
-			onFeatureUsage: function (usageInfo) {
-				console.log(usageInfo.message)
-			}
-		}),
+		// doIUse ({
+		// 	browsers: [
+		// 		'ie >= 8',
+		// 		'> 1%'
+		// 	],
+		// 	ignore: ['rem'], // an optional array of features to ignore
+		// 	ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
+		// 	onFeatureUsage: function (usageInfo) {
+		// 		console.log(usageInfo.message)
+		// 	}
+		// }),
 		flexBugs ({
 			bug6: false 
 		})
@@ -96,7 +97,7 @@ gulp.task('style', () => {
 				outputStyle: 'expanded'
 			}))
 			.pipe(postcss(postcssPlugins))
-			.pipe(production(rename({suffix: '.min'})))
+			.pipe(rename({suffix: '.min'}))
 			.pipe(production(csso({
 				restructure: false,
 				sourceMap: true,
@@ -104,7 +105,8 @@ gulp.task('style', () => {
 			})))
 			.pipe(plumber.stop())
 		.pipe(development(sourcemaps.write()))
-    .pipe(gulp.dest((PATH.dirs.scss)));
+		.pipe(gulp.dest((PATH.dirs.scss)))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('imageMin', () => {
@@ -130,6 +132,7 @@ gulp.task('imageMin', () => {
 			})
 		]))
 		.pipe(gulp.dest(PATH.dirs.img))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('clean', () => {
