@@ -5,6 +5,7 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import csso from 'gulp-csso';
 import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
 import notify from 'gulp-notify';
 import del from 'del';
 import imagemin from 'gulp-imagemin';
@@ -95,6 +96,7 @@ gulp.task('style', () => {
 				outputStyle: 'expanded'
 			}))
 			.pipe(postcss(postcssPlugins))
+			.pipe(production(rename({suffix: '.min'})))
 			.pipe(production(csso({
 				restructure: false,
 				sourceMap: true,

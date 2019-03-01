@@ -4,10 +4,10 @@
   "description": "* <a href=\"https://html2pug.herokuapp.com/\"> Html2pug converter\r * <a href=\"https://www.favicon-generator.org/\"> Favicon generator",
   "main": "gulpfile.js",
   "scripts": {
-	 "test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node_modules/.bin/gulp --env development",
-		"prod": "node_modules/.bin/gulp --env production",
-		"build": "node_modules/.bin/gulp build --env production"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/gulp --env development",
+    "prod": "node_modules/.bin/gulp --env production",
+    "build": "node_modules/.bin/gulp build --env production"
   },
   "repository": {
     "type": "git",
@@ -35,10 +35,13 @@
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-watch": "^5.0.1",
     "node-sass": "^4.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
 }
