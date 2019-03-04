@@ -16,6 +16,9 @@ import doIUse from 'doiuse';
 import flexBugs from 'postcss-flexbugs-fixes';
 
 import newer from 'gulp-newer';
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
 import watch from 'gulp-watch'; 
 import {create as bsCreate} from 'browser-sync';
 const browserSync = bsCreate();
@@ -28,12 +31,19 @@ const PATH = {
 	src: {
 		html: './src/*.html',
 		scss: './src/scss/**/*.scss',
-		img: './src/assets/img/**/*'
+		img: './src/assets/img/**/*',
+		js: './src/js/**/*.js'
 	},
 	dirs: {
 		html: './build/',
+<<<<<<< Updated upstream
 		scss: './build/css',
 		img: './build/img'
+=======
+		scss: './build/css/',
+		img: './build/img',
+		js: './build/js/',
+>>>>>>> Stashed changes
 	},
 	build: {
 		folder: './build'
@@ -107,6 +117,30 @@ gulp.task('style', () => {
     .pipe(gulp.dest((PATH.dirs.scss)));
 });
 
+gulp.task('scripts', () => {
+	return gulp.src(PATH.src.js, {since: gulp.lastRun('scripts')})
+		.pipe(plumber({
+			errorHandler: notify.onError((err) => {
+				return {
+					title: 'scripts',
+					message: err.message
+				}
+			})
+		}))
+		.pipe(development(sourcemaps.init({loadMaps: true})))
+			.pipe(newer(PATH.dirs.js))
+			.pipe(babel({
+				presets: ['@babel/env']
+			}))
+			.pipe(production(concat('all.js')))
+			.pipe(production(uglify()))
+			.pipe(rename({suffix: '.min'}))
+			.pipe(plumber.stop())
+		.pipe(development(sourcemaps.write()))
+		.pipe(gulp.dest((PATH.dirs.js)))
+		.pipe(browserSync.reload({stream: true}));
+})
+
 gulp.task('imageMin', () => {
 	return gulp.src(PATH.src.img, {since: gulp.lastRun('imageMin')})
 		.pipe(plumber({
@@ -138,7 +172,7 @@ gulp.task('clean', () => {
   })
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style'), 'imageMin'));
+gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
 
 gulp.task('watch', () => {
 	gulp.watch(PATH.src.html, gulp.series('fileInclude'));
