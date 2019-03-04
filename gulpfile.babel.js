@@ -5,31 +5,23 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import csso from 'gulp-csso';
 import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
 import notify from 'gulp-notify';
 import del from 'del';
 import imagemin from 'gulp-imagemin';
 import environments from 'gulp-environments';
 
-import cssNext from 'postcss-cssnext'; // This plugin can replace autoprefixer. It makes sense? yesss
+import cssNext from 'postcss-cssnext';
 import doIUse from 'doiuse';
 import flexBugs from 'postcss-flexbugs-fixes';
 
 import newer from 'gulp-newer';
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
 import watch from 'gulp-watch'; 
 import {create as bsCreate} from 'browser-sync';
 const browserSync = bsCreate();
-
-// TODO: Please use gulp-plumber
-/*
-.pipe(plumber({
-	errorHandler: notify.onError((err) => {
-		return {
-			title: 'sass',
-			message: err.message
-		}
-	})
-}))
-*/
 
 let
   development = environments.development,
@@ -39,12 +31,19 @@ const PATH = {
 	src: {
 		html: './src/*.html',
 		scss: './src/scss/**/*.scss',
-		img: './src/assets/img/**/*'
+		img: './src/assets/img/**/*',
+		js: './src/js/**/*.js'
 	},
 	dirs: {
 		html: './build/',
+<<<<<<< Updated upstream
 		scss: './build/css',
 		img: './build/img'
+=======
+		scss: './build/css/',
+		img: './build/img',
+		js: './build/js/',
+>>>>>>> Stashed changes
 	},
 	build: {
 		folder: './build'
@@ -68,11 +67,6 @@ gulp.task('fileInclude', () => {
 			}))
 		.pipe(gulp.dest(PATH.dirs.html));
 });
-
-// TODO: Please add postcss after sass
-// TODO: Please use autoprefixer like postcss plugin
-
-
 
 gulp.task('style', () => {
 
@@ -106,13 +100,14 @@ gulp.task('style', () => {
 				}
 			})
 		}))
-		.pipe(development(sourcemaps.init({loadMaps: true}))) // TODO: Please add environments and use this line only if it is development
+		.pipe(development(sourcemaps.init({loadMaps: true})))
 			.pipe(newer(PATH.dirs.scss))
 			.pipe(sass({
 				outputStyle: 'expanded'
-			})) // Todo: Change to gulp plumber, you've forgotten about settings for sass outputStyle: 'expanded'
+			}))
 			.pipe(postcss(postcssPlugins))
-			.pipe(production(csso({ // TODO: Please add environments and use this line only if it is production
+			.pipe(production(rename({suffix: '.min'})))
+			.pipe(production(csso({
 				restructure: false,
 				sourceMap: true,
 				debug: true
@@ -122,8 +117,30 @@ gulp.task('style', () => {
     .pipe(gulp.dest((PATH.dirs.scss)));
 });
 
-// TODO: Please, read about gulp-newer
-// TODO: You forgot about browserSync
+gulp.task('scripts', () => {
+	return gulp.src(PATH.src.js, {since: gulp.lastRun('scripts')})
+		.pipe(plumber({
+			errorHandler: notify.onError((err) => {
+				return {
+					title: 'scripts',
+					message: err.message
+				}
+			})
+		}))
+		.pipe(development(sourcemaps.init({loadMaps: true})))
+			.pipe(newer(PATH.dirs.js))
+			.pipe(babel({
+				presets: ['@babel/env']
+			}))
+			.pipe(production(concat('all.js')))
+			.pipe(production(uglify()))
+			.pipe(rename({suffix: '.min'}))
+			.pipe(plumber.stop())
+		.pipe(development(sourcemaps.write()))
+		.pipe(gulp.dest((PATH.dirs.js)))
+		.pipe(browserSync.reload({stream: true}));
+})
+
 gulp.task('imageMin', () => {
 	return gulp.src(PATH.src.img, {since: gulp.lastRun('imageMin')})
 		.pipe(plumber({
@@ -149,18 +166,13 @@ gulp.task('imageMin', () => {
 		.pipe(gulp.dest(PATH.dirs.img))
 });
 
-/* TODO:
-  return del(PATH.build.folder, {
-    force: true
-  })
-*/
 gulp.task('clean', () => {
 	return del(PATH.build.folder, {
 		force: true
   })
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style'), 'imageMin'));
+gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
 
 gulp.task('watch', () => {
 	gulp.watch(PATH.src.html, gulp.series('fileInclude'));
@@ -175,8 +187,6 @@ gulp.task('serve', () => {
 		},
     notify: false
 	});
-	
-	// browserSync.watch('build/**/*.*').on('change', browserSync.reload);
 })
 
 gulp.task('default', 
