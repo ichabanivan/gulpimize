@@ -21,9 +21,9 @@ import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 // import watch from 'gulp-watch';
-import { create as bsCreate } from 'browser-sync';
+import { create } from 'browser-sync';
 
-const browserSync = bsCreate();
+const browserSync = create();
 
 const { development, production } = environments;
 
