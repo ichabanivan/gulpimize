@@ -12,7 +12,7 @@ import imagemin from 'gulp-imagemin';
 import environments from 'gulp-environments';
 
 import cssNext from 'postcss-cssnext';
-import doIUse from 'doiuse';
+// import doIUse from 'doiuse';
 import flexBugs from 'postcss-flexbugs-fixes';
 
 import newer from 'gulp-newer';
@@ -36,14 +36,9 @@ const PATH = {
 	},
 	dirs: {
 		html: './build/',
-<<<<<<< Updated upstream
 		scss: './build/css',
-		img: './build/img'
-=======
-		scss: './build/css/',
 		img: './build/img',
-		js: './build/js/',
->>>>>>> Stashed changes
+		js: './build/js'
 	},
 	build: {
 		folder: './build'
@@ -75,17 +70,18 @@ gulp.task('style', () => {
 			browsers: ['last 10 versions', '> 0.5%'],
 			cascade: false
 		}),
-		doIUse ({
-			browsers: [
-				'ie >= 8',
-				'> 1%'
-			],
-			ignore: ['rem'], // an optional array of features to ignore
-			ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
-			onFeatureUsage: function (usageInfo) {
-				console.log(usageInfo.message)
-			}
-		}),
+		// for being able to check for compatibility with older ones version
+		// doIUse ({
+		// 	browsers: [
+		// 		'ie >= 8',
+		// 		'> 1%'
+		// 	],
+		// 	ignore: ['rem'], // an optional array of features to ignore
+		// 	ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
+		// 	onFeatureUsage: function (usageInfo) {
+		// 		console.log(usageInfo.message)
+		// 	}
+		// }),
 		flexBugs ({
 			bug6: false 
 		})
@@ -172,7 +168,7 @@ gulp.task('clean', () => {
   })
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
+gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts', 'imageMin')));
 
 gulp.task('watch', () => {
 	gulp.watch(PATH.src.html, gulp.series('fileInclude'));
