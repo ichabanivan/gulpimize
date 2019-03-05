@@ -25,9 +25,7 @@ import { create as bsCreate } from 'browser-sync';
 
 const browserSync = bsCreate();
 
-const
-  { development } = environments;
-const { production } = environments;
+const { development, production } = environments;
 
 const PATH = {
   src: {
