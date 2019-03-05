@@ -19,7 +19,7 @@ import newer from 'gulp-newer';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
-import watch from 'gulp-watch'; 
+import watch from 'gulp-watch';
 import {create as bsCreate} from 'browser-sync';
 const browserSync = bsCreate();
 
@@ -60,7 +60,8 @@ gulp.task('fileInclude', () => {
 			prefix: '@@',
 				basepath: '@file'
 			}))
-		.pipe(gulp.dest(PATH.dirs.html));
+		.pipe(gulp.dest(PATH.dirs.html))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('style', () => {
@@ -70,7 +71,6 @@ gulp.task('style', () => {
 			browsers: ['last 10 versions', '> 0.5%'],
 			cascade: false
 		}),
-		// for being able to check for compatibility with older ones version
 		// doIUse ({
 		// 	browsers: [
 		// 		'ie >= 8',
@@ -110,7 +110,8 @@ gulp.task('style', () => {
 			})))
 			.pipe(plumber.stop())
 		.pipe(development(sourcemaps.write()))
-    .pipe(gulp.dest((PATH.dirs.scss)));
+		.pipe(gulp.dest((PATH.dirs.scss)))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('scripts', () => {
@@ -160,6 +161,7 @@ gulp.task('imageMin', () => {
 			})
 		]))
 		.pipe(gulp.dest(PATH.dirs.img))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('clean', () => {

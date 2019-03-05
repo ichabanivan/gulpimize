@@ -1,0 +1,56 @@
+@import "../base";
+
+body {
+	background-color: $bg-color;
+	margin-top: 10px;
+}
+
+.header {
+	min-height: 150px;
+}
+
+img {
+	// height: 300px;
+	display: block;
+	max-width: 100%;
+}
+
+.title {
+	font-size: 2rem;
+	letter-spacing: 2px;
+	color: $accent;
+	text-align: left;
+
+	@media (min-width: 576px) {
+		font-size: 4rem;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 5rem;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 8rem;
+	}
+}
+
+.text {
+	font-size: .3rem;
+	color: $color;
+	text-align: right;
+	letter-spacing: .4px;
+	margin-top: -8px;
+
+	@media (min-width: 576px) {
+		font-size: .6rem;
+		margin-top: -15px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: .9rem;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 1.1rem;
+	}
+}
