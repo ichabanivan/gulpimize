@@ -10,16 +10,17 @@ import notify from 'gulp-notify';
 import del from 'del';
 import imagemin from 'gulp-imagemin';
 import environments from 'gulp-environments';
+import eslint from 'gulp-eslint';
 
 import cssNext from 'postcss-cssnext';
-import doIUse from 'doiuse';
+// import doIUse from 'doiuse';
 import flexBugs from 'postcss-flexbugs-fixes';
 
 import newer from 'gulp-newer';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
-import watch from 'gulp-watch'; 
+// import watch from 'gulp-watch'; 
 import {create as bsCreate} from 'browser-sync';
 const browserSync = bsCreate();
 
@@ -36,14 +37,8 @@ const PATH = {
 	},
 	dirs: {
 		html: './build/',
-<<<<<<< Updated upstream
 		scss: './build/css',
 		img: './build/img'
-=======
-		scss: './build/css/',
-		img: './build/img',
-		js: './build/js/',
->>>>>>> Stashed changes
 	},
 	build: {
 		folder: './build'
@@ -75,17 +70,17 @@ gulp.task('style', () => {
 			browsers: ['last 10 versions', '> 0.5%'],
 			cascade: false
 		}),
-		doIUse ({
-			browsers: [
-				'ie >= 8',
-				'> 1%'
-			],
-			ignore: ['rem'], // an optional array of features to ignore
-			ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
-			onFeatureUsage: function (usageInfo) {
-				console.log(usageInfo.message)
-			}
-		}),
+		// doIUse ({
+		// 	browsers: [
+		// 		'ie >= 8',
+		// 		'> 1%'
+		// 	],
+		// 	ignore: ['rem'], // an optional array of features to ignore
+		// 	ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
+		// 	onFeatureUsage: function (usageInfo) {
+		// 		console.log(usageInfo.message)
+		// 	}
+		// }),
 		flexBugs ({
 			bug6: false 
 		})
@@ -170,6 +165,19 @@ gulp.task('clean', () => {
 	return del(PATH.build.folder, {
 		force: true
   })
+});
+
+gulp.task('eslint', () => {
+		return gulp.src(['**/*.js','!node_modules/**'])
+			.pipe(eslint())
+			.pipe(eslint.format())
+			.pipe(eslint.failAfterError())
+			.pipe(eslint.formatEach('compact', process.stderr));
+});
+
+gulp.task('eslintFix', () => {
+	return gulp.src(['**/*.js','!node_modules/**'])
+		.pipe(eslint({fix:true}))
 });
 
 gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
