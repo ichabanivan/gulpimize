@@ -25,9 +25,9 @@ import { create as bsCreate } from 'browser-sync';
 
 const browserSync = bsCreate();
 
-let
-  development = environments.development,
-  production  = environments.production;
+const
+  { development } = environments;
+const { production } = environments;
 
 const PATH = {
   src: {
@@ -158,8 +158,7 @@ gulp.task('eslint', () => gulp.src(['**/*.js', '!node_modules/**'])
 gulp.task('eslintFix', () => gulp.src(['**/*.js', '!node_modules/**'])
   .pipe(eslint({ fix: true }))
   .pipe(eslint.format())
-	.pipe(gulp.dest('./'))
-);
+  .pipe(gulp.dest('./')));
 
 gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
 
