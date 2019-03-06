@@ -13,7 +13,6 @@ import environments from 'gulp-environments';
 import eslint from 'gulp-eslint';
 
 import cssNext from 'postcss-cssnext';
-// import doIUse from 'doiuse';
 import flexBugs from 'postcss-flexbugs-fixes';
 
 import newer from 'gulp-newer';
@@ -29,24 +28,40 @@ const { development, production } = environments;
 
 const PATH = {
   src: {
-    html: './src/*.html',
-    scss: './src/scss/**/*.scss',
-    img: './src/assets/img/**/*',
-    js: './src/js/**/*.js'
+    html: {
+      folder:  './src/*.html' 
+    },
+    scss: {
+      folder: './src/scss/pages/*.scss'
+    }, 
+    img: {
+      folder: './src/assets/img/**/*'
+    }, 
+    js: {
+      folder: './src/js/**/*.js'
+    }
   },
-  dirs: {
-    html: './build/',
-    scss: './build/css',
-    img: './build/img',
-    js: './build/js'
+  output: {
+    html: {
+      folder: './build/'
+    },
+    scss: {
+      folder: './build/css'
+    }, 
+    img: {
+      folder: './build/img'
+    }, 
+    js: {
+      folder: './build/js'
+    } 
   },
   build: {
     folder: './build'
   }
 };
 
-gulp.task('fileInclude', () => {
-  return gulp.src(PATH.src.html, {since: gulp.lastRun('fileInclude')})
+gulp.task('html', () => {
+  return gulp.src(PATH.src.html.folder)
     .pipe(plumber({
       errorHandler: notify.onError(err => ({
         title: 'html',
@@ -57,7 +72,7 @@ gulp.task('fileInclude', () => {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest(PATH.dirs.html))
+    .pipe(gulp.dest(PATH.output.html.folder))
 });
 
 gulp.task('style', () => {
@@ -66,23 +81,12 @@ gulp.task('style', () => {
       browsers: ['last 10 versions', '> 0.5%'],
       cascade: false
     }),
-    // doIUse ({
-    // 	browsers: [
-    // 		'ie >= 8',
-    // 		'> 1%'
-    // 	],
-    // 	ignore: ['rem'], // an optional array of features to ignore
-    // 	ignoreFiles: ['**/normalize.css'], // an optional array of file globs to match against original source file path, to ignore
-    // 	onFeatureUsage: function (usageInfo) {
-    // 		console.log(usageInfo.message)
-    // 	}
-    // }),
     flexBugs({
       bug6: false
     })
   ];
 
-  return gulp.src(PATH.src.scss, {since: gulp.lastRun('style')})
+  return gulp.src(PATH.src.scss.folder)
     .pipe(plumber({
       errorHandler: notify.onError(err => ({
         title: 'style',
@@ -102,12 +106,12 @@ gulp.task('style', () => {
     })))
     .pipe(plumber.stop())
     .pipe(development(sourcemaps.write()))
-    .pipe(gulp.dest((PATH.dirs.scss)))
+    .pipe(gulp.dest((PATH.output.scss.folder)))
     .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('scripts', () => {
-  return gulp.src(PATH.src.js, {since: gulp.lastRun('scripts')})
+  return gulp.src(PATH.src.js.folder)
     .pipe(plumber({
       errorHandler: notify.onError(err => ({
         title: 'scripts',
@@ -123,19 +127,19 @@ gulp.task('scripts', () => {
     .pipe(rename({ suffix: '.min' }))
     .pipe(plumber.stop())
     .pipe(development(sourcemaps.write()))
-    .pipe(gulp.dest((PATH.dirs.js)))
+    .pipe(gulp.dest((PATH.output.js.folder)))
     .pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('imageMin', () => {
-  return gulp.src(PATH.src.img, {since: gulp.lastRun('imageMin')})
+  return gulp.src(PATH.src.img.folder)
     .pipe(plumber({
       errorHandler: notify.onError(err => ({
         title: 'img',
         message: err.message
       }))
     }))
-    .pipe(newer(PATH.dirs.img))
+    .pipe(newer(PATH.output.img.folder))
     .pipe(imagemin([
       imagemin.gifsicle({ interlaced: true }),
       imagemin.jpegtran({ progressive: true }),
@@ -147,7 +151,7 @@ gulp.task('imageMin', () => {
         ]
       })
     ]))
-    .pipe(gulp.dest(PATH.dirs.img))
+    .pipe(gulp.dest(PATH.output.img.folder))
 });
 
 gulp.task('clean', () => del(PATH.build.folder, {
@@ -169,12 +173,12 @@ gulp.task('eslintFix', () => {
     .pipe(gulp.dest('./'))
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'style', 'scripts'), 'imageMin'));
 
 gulp.task('watch', () => {
-  gulp.watch(PATH.src.html, gulp.series('fileInclude'));
-  gulp.watch(PATH.src.scss, gulp.series('style'));
-  gulp.watch(PATH.src.img, gulp.series('imageMin'));
+  gulp.watch(PATH.src.html.folder, gulp.series('html'));
+  gulp.watch(PATH.src.scss.folder, gulp.series('style'));
+  gulp.watch(PATH.src.img.folder, gulp.series('imageMin'));
 });
 
 gulp.task('serve', () => {
