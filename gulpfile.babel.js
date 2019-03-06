@@ -11,6 +11,7 @@ import del from 'del';
 import imagemin from 'gulp-imagemin';
 import environments from 'gulp-environments';
 import eslint from 'gulp-eslint';
+import w3cjs from 'gulp-w3cjs';
 
 import cssNext from 'postcss-cssnext';
 // import doIUse from 'doiuse';
@@ -25,7 +26,10 @@ import { create } from 'browser-sync';
 
 const browserSync = create();
 
-const { development, production } = environments;
+const production = environments.production;
+const development = environments.development;
+
+// const { development, production } = environments;
 
 const PATH = {
   src: {
@@ -156,9 +160,25 @@ gulp.task('eslint', () => gulp.src(['**/*.js', '!node_modules/**'])
 gulp.task('eslintFix', () => gulp.src(['**/*.js', '!node_modules/**'])
   .pipe(eslint({ fix: true }))
   .pipe(eslint.format())
-  .pipe(gulp.dest('./')));
+  .pipe(gulp.dest('./'))
+);
 
-gulp.task('build', gulp.series('clean', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
+gulp.task('validate', () => 
+    gulp.src('src/*.html')
+        .pipe(w3cjs({
+          verifyMessage: function(type, message) {
+       
+              // prevent logging error message
+              if(message.indexOf('Element “style” not allowed as child of element') === 0) return false;
+              
+              // allow message to pass through
+              return true;
+          }
+      }))
+      .pipe(w3cjs.reporter())
+);
+
+gulp.task('build', gulp.series('clean', 'validate', gulp.parallel('fileInclude', 'style', 'scripts'), 'imageMin'));
 
 gulp.task('watch', () => {
   gulp.watch(PATH.src.html, gulp.series('fileInclude'));
