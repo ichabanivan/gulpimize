@@ -1,3 +1,5 @@
 # User-specific stuff
 .idea
 node_modules/
+build/
+yarn.lock
