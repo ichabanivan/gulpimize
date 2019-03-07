@@ -16,7 +16,7 @@ const PATH = {
     libs: {
       input: [`${src}/scss/libs.scss`],
       output: [`${build}/css`],
-      watch: [`${src}/scss/libs.scss`]
+      watch: [`${src}/scss/bootstrap/*.scss`, `${src}/scss/libs.scss`]
     }
   },
   img: {
