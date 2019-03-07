@@ -1,0 +1,34 @@
+// Example:
+// .fz-${size}
+$font-sizes: ();
+$font-sizes: map-merge((
+  0: 0,
+  12: 12px,
+  14: 14px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  56: 56px,
+  100: 100px,
+), $font-sizes);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    // xs: 0,
+    // sm: 576px,
+    // md: 768px,
+    // lg: 992px,
+    // xl: 1200px
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    // $prop - font-size
+    // $abbrev - fz
+    @each $prop, $abbrev in (font-size: fz) {
+      // 0: 0 px etc...
+      @each $size, $length in $font-sizes {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+      }
+    }
+  }
+}
