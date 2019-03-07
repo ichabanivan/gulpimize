@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: #ccc;
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  font-size: 62.5%; // 10px
+
+  //@media screen and (width <= 992px) {
+  //  font-size: 56.25%; // 9px
+  //}
+  //
+  //@media screen and (width <= 768px) {
+  //  font-size: 50%; // 8px
+  //}
+  //
+  //@media screen and (width <= 480px) {
+  //  font-size: 43.75%; // 7px
+  //}
+  //
+  //@media screen and (width <= 320px) {
+  //  font-size: 37.5%; // 6px
+  //}
+}
+
+body {
+  overflow-x: hidden;
+
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: $default-font;
+  line-height: 1.5;
+
+  input:focus:required:invalid,
+  textarea:focus:required:invalid,
+  input:required:valid,
+  textarea:required:valid {
+    color: #666;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
