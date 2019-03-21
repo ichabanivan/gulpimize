@@ -27,16 +27,9 @@ const PATH = {
   },
   js: {
     all: [`${src}/js/**/*.js`],
-    main: {
-      input: [`${src}/js/pages/*.js`],
-      output: [`${build}/js`],
-      watch: [`${src}/js/**/*.js`, `!${src}/js/libs.js`]
-    },
-    libs: {
-      input: [`${src}/js/libs.js`],
-      output: [`${build}/js`],
-      watch: [`${src}/js/libs.js`]
-    }
+    input: [`${src}/js/pages/*.js`],
+    output: [`${build}/js`],
+    watch: [`${src}/js/**/*.js`, `!${src}/js/libs.js`]
   }
 };
 

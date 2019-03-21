@@ -1,14 +1,9 @@
-import divide from './header';
+import $ from 'jquery';
 
-// let divide = function (first, second = 5) {
-// 	return first / second;
-// }
-
-// console.log(divide(4, 2));
-// console.log(divide(5, 2));
-// console.log(divide(15, 2));
-// console.log(divide(105, 2));
-// console.log(divide(444, 2));
-// console.log(divide(444));
-
-// $('body').addClass('red');
+$(() => {
+  if (process.env.NODE_ENV === 'development') {
+    console.log('%c App loaded meta', 'color: #fff; background: #ff0000; font-size: 22px;font-weight: bold;',
+      '\n process.env.NODE_ENV:', process.env.NODE_ENV,
+    );
+  }
+});

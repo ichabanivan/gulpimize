@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import html from './gulp/tasks/html';
 import { libs as scssLibs, style as scssStyle } from './gulp/tasks/scss';
-import { libs as jsLibs, main as mainJs } from './gulp/tasks/webpack';
+import webpack from './gulp/tasks/webpack';
 import images from './gulp/tasks/images';
 import clean from './gulp/tasks/clean';
 import { lint, fix } from './gulp/tasks/eslint';
@@ -15,8 +15,7 @@ gulp.task('html', html);
 gulp.task('scss:libs', scssLibs);
 gulp.task('scss:style', scssStyle);
 // js
-gulp.task('js:libs', jsLibs);
-gulp.task('js:main', mainJs);
+gulp.task('webpack', webpack);
 // images
 gulp.task('images', images);
 // clean
@@ -30,7 +29,7 @@ gulp.task('eslint:fix', fix);
 gulp.task('build',
   gulp.series(
     'clean',
-    gulp.parallel('html', 'scss:style', 'scss:libs', 'js:main'),
+    gulp.parallel('html', 'scss:style', 'scss:libs', 'webpack'),
     'images'
   ));
 
@@ -39,8 +38,7 @@ gulp.task('watch', () => {
   gulp.watch(PATH.html.watch, gulp.series('html'));
   gulp.watch(PATH.scss.style.watch, gulp.series('scss:style'));
   gulp.watch(PATH.scss.libs.watch, gulp.series('scss:libs'));
-  gulp.watch(PATH.js.main.watch, gulp.series('js:main'));
-  gulp.watch(PATH.js.libs.watch, gulp.series('js:libs'));
+  gulp.watch(PATH.js.watch, gulp.series('webpack'));
   gulp.watch(PATH.img.watch, gulp.series('images'));
 });
 

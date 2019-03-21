@@ -1,73 +1,107 @@
 // Gulp
 import environments from 'gulp-environments';
-import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import rename from 'gulp-rename';
-import babel from 'gulp-babel';
-import uglify from 'gulp-uglify';
-import webpack from 'webpack-stream';
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
 import gulp from 'gulp';
+import named from 'vinyl-named'; // Give vinyl files chunk names.
+import gulplog from 'gulplog';
 // PATH
 import PATH from '../PATH';
-// Babel config
-import babelrc from '../../.babelrc';
 // Server
 import { browserSync } from './server';
-import { isAttribute } from 'postcss-selector-parser';
+
+const publicPath = 'https://zanusilker.github.io/gulpimize/build';
 // Environments
-const { development, production } = environments;
+const
+  isDevelopment = environments.development();
 
-// isDev is set to developer mode. To switch to production mode, specify isDev = false
-let isDev = true;
-let isProd = !isDev;
+export default (callback) => {
+  const NODE_ENV = isDevelopment ? 'development' : 'production'; // Set environments
+  let firstBuildReady = false;
 
-const webConfig = {
+  function done(err, stats) {
+    firstBuildReady = true;
+
+    if (err) { // hard error, see https://webpack.github.io/docs/node.js-api.html#error-handling
+      return; // emit('error', err) in webpack-stream
+    }
+
+    gulplog[stats.hasErrors() ? 'error' : 'info'](stats.toString({
+      colors: true
+    }));
+  }
+
+  // options related to how webpack emits results
+  const options = {
+
     output: {
-      filename: 'index.min.js'
+      library: '[name]', // the name of the exported library
+      // You need to set the path for your project without '/' on the end.
+      publicPath: (publicPath && !isDevelopment) ? `${publicPath}/js/` : '/js/',
+      filename: '[name].js', // the filename template for entry chunks
+      chunkFilename: '[name].js' // the filename template for additional chunks
     },
-    mode: isDev ? 'development' : 'production',
-    devtool: isDev ? 'eval-source-map' : 'none'
-};
 
-// const webConfig = {
-//   output: {
-//     filename: 'index.min.js'
-//   },
-//   mode: isDev ? 'development' : 'production',
-//   devtool: isDev ? 'eval-source-map' : 'none'
-// };
+    watch: true, // Turn on watch mode. This means that after the initial build, webpack will continue to watch for changes in your js
 
-// Task js:libs
-// export const libs = () => gulp.src(PATH.js.libs.input)
-//   .pipe(plumber({
-//     errorHandler: notify.onError(err => ({
-//       title: 'js:libs',
-//       message: err.message
-//     }))
-// 	}))
-// 	.pipe(webpack(webConfig.libs))
-//   .pipe(babel(babelrc))
-//   // .pipe(production(uglify()))
-//   // .pipe(rename({ suffix: '.min' }))
-//   .pipe(gulp.dest((PATH.js.libs.output)))
-//   .pipe(plumber.stop())
-//   .pipe(browserSync.reload({ stream: true }));
+    watchOptions: {
+      aggregateTimeout: 100 // Add a delay before rebuilding once the first file changed.
+    },
 
-// Task js:main
-export const main = () => gulp.src(PATH.js.main.input)
-  .pipe(plumber({
-    errorHandler: notify.onError(err => ({
-      title: 'js:main',
-      message: err.message
+    mode: isDevelopment ? 'development' : 'production',
+
+    module: {
+      rules: [
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        }
+      ]
+    },
+
+    optimization: {
+      noEmitOnErrors: true,
+      splitChunks: {
+        chunks: 'all',
+        name: 'commons', // The chunk name of the commons chunk.
+        filename: 'commons.js', // The filename template for the commons chunk.
+        minChunks: 2 // The minimum number of chunks which need to contain a module before it's moved into the commons chunk.
+      }
+    },
+
+    plugins: [
+      new webpack.DefinePlugin({
+        NODE_ENV: JSON.stringify(NODE_ENV)
+      })
+    ]
+
+  };
+
+  gulplog[options.publicPath ? 'info' : 'error'](`Your public path - ${options.publicPath}`);
+
+  return gulp.src(PATH.js.input)
+    .pipe(plumber({
+      errorHandler: notify.onError(err => ({
+        title: 'webpack',
+        message: err.message
+      }))
     }))
-  }))
-	// .pipe(development(sourcemaps.init({ loadMaps: true })))
-	.pipe(webpack(webConfig))
-  .pipe(babel(babelrc))
-  // .pipe(production(uglify()))
-  // .pipe(rename({ suffix: '.min' }))
-  // .pipe(development(sourcemaps.write()))
-  .pipe(plumber.stop())
-  .pipe(gulp.dest((PATH.js.main.output)))
-  .pipe(browserSync.reload({ stream: true }));
+    .pipe(named())
+    .pipe(webpackStream(options, webpack, done))
+    .pipe(gulp.dest(PATH.js.output))
+    .pipe(browserSync.reload({ stream: true }))
+    .on('data', () => {
+      if (firstBuildReady && !callback.called) {
+        callback.called = true;
+        callback();
+      }
+    });
+};
