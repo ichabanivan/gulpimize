@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 import html from './gulp/tasks/html';
 import { libs as scssLibs, style as scssStyle } from './gulp/tasks/scss';
-import { libs as jsLibs, main as mainJs } from './gulp/tasks/scripts';
+import { libs as jsLibs, main as mainJs } from './gulp/tasks/webpack';
 import images from './gulp/tasks/images';
 import clean from './gulp/tasks/clean';
 import { lint, fix } from './gulp/tasks/eslint';
@@ -26,10 +26,11 @@ gulp.task('eslint', lint);
 gulp.task('eslint:fix', fix);
 
 // build
+// without js:libs'
 gulp.task('build',
   gulp.series(
     'clean',
-    gulp.parallel('html', 'scss:style', 'scss:libs', 'js:main', 'js:libs'),
+    gulp.parallel('html', 'scss:style', 'scss:libs', 'js:main'),
     'images'
   ));
 
