@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Index</title>
-  <link rel="stylesheet" href="./css/libs.min.css">
-  <link rel="stylesheet" href="./css/index.min.css">
+  <!-- Load css with preload attr -->
+  <link rel="preload" href="./css/libs.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="./css/index.min.css" as="style" onload="this.rel='stylesheet'">
+  <!-- IF JS is disabled-->
+  <noscript>
+    <link rel="stylesheet" href="./css/libs.min.css">
+    <link rel="stylesheet" href="./css/index.min.css">
+  </noscript>
+  <!-- loadCSS rel=preload polyfill -->
+  <script>
+    @@include('../node_modules/fg-loadcss/dist/cssrelpreload.min.js')
+  </script>
 </head>
 <body class="bg-primary">
 
