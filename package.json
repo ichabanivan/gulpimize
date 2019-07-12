@@ -1,6 +1,6 @@
 {
   "name": "gulpimize",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Basic template for quickly getting started",
   "main": "index.js",
   "scripts": {
