@@ -4435,10 +4435,10 @@ gulp-csso@^3.0.1:
     plugin-error "^0.1.2"
     vinyl-sourcemaps-apply "^0.2.1"
 
-gulp-environments@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/gulp-environments/-/gulp-environments-0.1.2.tgz#8646107392193582aff919d53de3302777ffb6eb"
-  integrity sha1-hkYQc5IZNYKv+RnVPeMwJ3f/tus=
+gulp-environments@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-environments/-/gulp-environments-1.0.0.tgz#926c755975ee8265d22eb6bf81696791f968ad26"
+  integrity sha512-LESfoAUledEF4zahP2pLluCzXdh91jFjpRCp3SmRw171TyIUQuquLQITNP+9n+9C9ASuBZMNn3rAUoWoi60hqw==
   dependencies:
     gulp-if "^2.0.1"
     yargs "^5.0.0"
